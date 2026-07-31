@@ -88,13 +88,20 @@ export default function AboutPage() {
           ))}
         </ul>
 
-        <div className="mt-16 border border-border bg-muted p-8">
+        <div className="mt-16 grid gap-6 border border-border bg-muted p-8 sm:grid-cols-[1fr_auto] sm:items-center">
           <p className="text-base text-foreground/80">
             Outside of work, Parham lives in Southern California with his
             wife, Shirin Salamat — an attorney and his biggest supporter —
             and can usually be found on the water, paddleboarding or
             kayaking.
           </p>
+          <Image
+            src="/images/Parham-kayaking.jpg"
+            alt="Parham Shariat paddleboarding near Newport Beach, California"
+            width={1536}
+            height={2048}
+            className="h-48 w-auto object-cover"
+          />
         </div>
 
         <div className="mt-10 flex flex-wrap gap-4">
