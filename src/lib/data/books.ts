@@ -7,10 +7,10 @@ export type Book = {
   slug: string;
   title: string;
   subtitle: string;
-  /** Set when the book has a confirmed position within "The Business Strategy Series" per the approved media kit / cover art. */
-  seriesPosition: number | null;
-  /** Whether this book is one of the three core "Business Strategy Series" titles, per Parham's confirmed grouping. */
-  inCoreSeries: boolean;
+  /** "Book N" label shown on the site — renumbered to match the narrative journey order (strategy → footprint → execution → younger-audience → companion), per Parham's confirmed decision, even where it diverges from the physical cover print. */
+  seriesPosition: number;
+  /** Short label for this book's role in the journey narrative (hub page + home page strip). */
+  journeyRole: string;
   buyUrl: string;
   coverImage: {
     src: string;
@@ -26,7 +26,7 @@ export type Book = {
   faq: BookFaq[];
 };
 
-export const coreSeriesName = "The Business Strategy Series";
+export const seriesName = "The Business Strategy Series";
 
 export const books: Book[] = [
   {
@@ -34,7 +34,7 @@ export const books: Book[] = [
     title: "The Business Strategy Plan",
     subtitle: "In the Age of AI",
     seriesPosition: 1,
-    inCoreSeries: true,
+    journeyRole: "The Foundation",
     buyUrl: "https://a.co/d/00qpaf4W",
     coverImage: {
       src: "/books/business-strategy-plan.jpg",
@@ -46,7 +46,7 @@ export const books: Book[] = [
     shortDescription:
       "Before you write a business plan, you need a strategy. This foundational guide provides the frameworks for designing businesses deliberately — defining strategic identity, building innovation cultures, planning for crises, and architecting for long-term value creation in an AI-driven economy. Strategy before tactics. Always.",
     mediumDescription:
-      "Most founders skip the most important step. They move straight into tactics — marketing, operations, AI tools — without first defining the strategic foundation their organization will be built upon. The result is unclear positioning, fragmented execution, and costly pivots.\n\nThe Business Strategy Plan provides the core methodology for building businesses deliberately rather than reactively. Learn how to define your strategic identity through a clear, defensible brand statement. Choose names, narratives, and structures that AI systems can recognize and recommend. Build cultures of innovation that adapt to technological disruption. Plan for crises and competitive shifts. Architect your business for long-term value creation — before writing a single line of a business plan.\n\nThis is not a book about tactics. It is about strategic design — the thinking layer that determines whether execution succeeds or fails.",
+      "Most founders skip the most important step. They move straight into tactics — marketing, operations, AI tools — without first defining the strategic foundation their organization will be built upon. The result is unclear positioning, fragmented execution, and costly pivots.\n\nThe Business Strategy Plan provides the core methodology for building businesses deliberately rather than reactively. Learn how to define your strategic identity through a clear, defensible brand statement. Choose names, narratives, and structures that AI systems can recognize and recommend. Build cultures of innovation that adapt to technological disruption. Plan for crises and competitive shifts. Architect your business for long-term value creation — before writing a single line of a business plan.\n\nThis is not a book about tactics. It is about strategic design — the thinking layer that determines whether execution succeeds or fails. It's the first book in The Business Strategy Series, distilled from two decades of Parham Shariat's work with corporations and startups.",
     whoItsFor:
       "Founders, executives, and operators who want to design their business deliberately — defining strategic identity and structure before moving into tactical execution.",
     keyTakeaways: [
@@ -68,9 +68,9 @@ export const books: Book[] = [
           "A defensible brand statement is a clear, specific articulation of strategic identity that guides every decision from hiring to product development. It matters because it is also what allows AI systems to correctly understand, categorize, and recommend a business — vague positioning is invisible to both customers and AI search.",
       },
       {
-        question: "How does this book connect to AI and GEO?",
+        question: "Is this a book about AI, or about strategy?",
         answer:
-          "Strategic clarity is the foundation that AI discoverability is built on. AI systems recommend businesses they can clearly understand and categorize, so the strategic identity work in this book — a defensible brand statement, clear positioning — is the prerequisite for the tactical GEO work covered in The Complete Guide to Dominating AI Search.",
+          "It's a strategy book first. The Business Strategy Plan lays out the frameworks for designing a business deliberately — strategic identity, innovation culture, crisis planning, long-term architecture. AI-era discoverability is one consideration inside that larger strategic picture, not the subject of the book.",
       },
       {
         question: "What does this book mean by \"innovation culture\"?",
@@ -85,57 +85,38 @@ export const books: Book[] = [
     ],
   },
   {
-    slug: "rockefeller-letters",
-    title: "The 38 Letters of Rockefeller to His Son",
-    subtitle: "With Author's Reflections",
+    slug: "digital-real-estate",
+    title: "Digital Real Estate",
+    subtitle: "How to Own More Space on the Internet",
     seriesPosition: 2,
-    inCoreSeries: true,
-    buyUrl: "https://a.co/d/06Ea10X4",
+    journeyRole: "The Shift",
+    buyUrl: "https://a.co/d/032T6v07",
     coverImage: {
-      src: "/books/38-letters-rockefeller.jpg",
-      width: 2400,
-      height: 2400,
+      src: "/books/digital-real-estate.jpg",
+      width: 807,
+      height: 1235,
     },
-    accentColor: "#C81E1E",
-    isPlaceholder: false,
-    shortDescription:
-      "Thirty-eight letters. Timeless lessons. The private counsel John D. Rockefeller gave his son on discipline, judgment, responsibility, and the long view required to build something that lasts. Not advice meant to comfort — but wisdom meant to forge resilience in the next generation of leaders.",
-    mediumDescription:
-      "What makes these letters enduring is not their origin in the Gilded Age, but their focus on questions that confront every serious leader: How do you think clearly under pressure? How do you build something that lasts? How do you prepare the next generation not merely to inherit, but to lead?\n\nRockefeller's counsel is strategic, psychological, and unforgiving in its honesty. Each letter addresses discipline, judgment, responsibility, and the long view required to steward organizations, capital, and influence across decades.\n\nWithin The Business Strategy Series, this second volume provides the leadership and philosophical foundation that must follow strategic design. Where Book One establishes how a business should be structured, this book examines how leaders must think in order to preserve, scale, and govern what they build.\n\nFor entrepreneurs, executives, and long-term thinkers who seek not only to build organizations — but to lead them with clarity, discipline, and purpose.",
+    accentColor: "#8E1F9C",
+    isPlaceholder: true,
+    shortDescription: "[[PLACEHOLDER — DO NOT PUBLISH]]",
+    mediumDescription: "[[PLACEHOLDER — DO NOT PUBLISH]]",
     whoItsFor:
-      "Entrepreneurs, executives, and long-term thinkers who seek not only to build organizations, but to lead them with clarity, discipline, and purpose.",
-    keyTakeaways: [
-      "Wealth without wisdom is merely inheritance, and power without principle is only temporary.",
-      "The letters weren't meant to comfort — they were designed to forge resilience, a kind of honest counsel modern leadership often lacks.",
-      "Judgment and discipline are learned through deliberate practice, not inherited; the letters provide a curriculum for developing both.",
-      "Long-term thinking is a competitive advantage most leaders talk about but few practice — Rockefeller measured decisions in decades, not quarters.",
-      "Within The Business Strategy Series, this book provides the leadership and philosophical foundation that follows strategic design, examining how leaders must think in order to preserve, scale, and govern what they build.",
-    ],
+      "The second book in The Business Strategy Series — on why owning your footprint on the internet became essential as AI reshaped how businesses get found. [[Full description PLACEHOLDER — DO NOT PUBLISH]]",
+    keyTakeaways: [],
     faq: [
       {
-        question: "Why did Parham Shariat write about Rockefeller's letters to his son?",
+        question: "Who wrote Digital Real Estate: How to Own More Space on the Internet?",
         answer:
-          "Parham wrote about Rockefeller's letters because he saw a gap: business audiences are saturated with get-rich-quick tactics and unproven advice but starving for wisdom about how to think. Rockefeller's private counsel to his son isn't motivational fluff — it's unfiltered lessons on judgment, discipline, and the long view, which modern leaders need but rarely get anywhere else.",
+          "Digital Real Estate: How to Own More Space on the Internet was written by Parham Shariat, author of The Business Strategy Series and Founder & Chief Strategy Officer of ReTHINK CNERGY.",
       },
       {
-        question: "What is the most valuable lesson from Rockefeller's letters for today's entrepreneurs?",
+        question: "Where does Digital Real Estate fit in The Business Strategy Series?",
         answer:
-          "Think in decades, not quarters. Rockefeller built across generations by measuring success differently, and he understood that judgment isn't inherited — it's developed through deliberate practice. His letters function as a curriculum for developing that judgment, something modern business education rarely provides.",
+          "It's Book Two — the shift from strategic foundation (Book One, The Business Strategy Plan) to recognizing content and online presence as the new competitive battleground, ahead of the tactical execution playbook in Book Three, The Complete Guide to Dominating AI Search.",
       },
       {
-        question: "How does this book fit within The Business Strategy Series?",
-        answer:
-          "It's Book Two. Where Book One, The Business Strategy Plan, establishes how a business should be structured, The 38 Letters of Rockefeller to His Son examines how leaders must think in order to preserve, scale, and govern what they build — the leadership and philosophical foundation that follows strategic design.",
-      },
-      {
-        question: "What time period do the 38 letters span?",
-        answer:
-          "The letters span 1855 to 1936, offering genuine historical correspondence from John D. Rockefeller to his son, presented here with the author's reflections connecting that counsel to modern business leadership.",
-      },
-      {
-        question: "Who should read The 38 Letters of Rockefeller to His Son?",
-        answer:
-          "Entrepreneurs, executives, and long-term thinkers who want to lead the organizations they build with clarity, discipline, and purpose — not just build them.",
+        question: "Where can I buy Digital Real Estate?",
+        answer: "Digital Real Estate is available on Amazon.",
       },
     ],
   },
@@ -143,8 +124,8 @@ export const books: Book[] = [
     slug: "dominating-ai-search",
     title: "The Complete Guide to Dominating AI Search",
     subtitle: "A Proven Framework for Generative Engine Optimization",
-    seriesPosition: null,
-    inCoreSeries: true,
+    seriesPosition: 3,
+    journeyRole: "The Execution Playbook",
     buyUrl: "https://a.co/d/0fdNmDWU",
     coverImage: {
       src: "/books/complete-guide-dominating-ai-search.jpg",
@@ -156,7 +137,7 @@ export const books: Book[] = [
     shortDescription:
       "Your prospects aren't Googling anymore — they're asking AI. This field-tested framework shows exactly how to get your business recommended by ChatGPT, Claude, Perplexity, and other AI platforms. Based on 11 months of research that increased citation visibility from 4% to 43% in 90 days.",
     mediumDescription:
-      "When was the last time your company was recommended by an AI platform? If the answer is \"never,\" the cost is not hypothetical — it is lost revenue, missed opportunities, and declining market relevance.\n\nMore than 60% of professionals now use AI systems for work-related research. Yet most businesses appear in fewer than 10% of AI-generated answers — even when they rank well on Google. Why? Because traditional SEO was never designed for AI search. AI systems don't rank websites. They cite sources inside generated answers. There is no page two. You're either referenced — or invisible.\n\nAfter analyzing 50+ businesses over eleven months, this book presents the complete Generative Engine Optimization framework: foundation architecture, the Atomic Answer Block content system, a 90-day execution plan, authority signals, distribution strategy, and measurement protocols.\n\nThe window for first-mover advantage is closing. This is the exact system already producing measurable revenue through AI-driven discovery.",
+      "When was the last time your company was recommended by an AI platform? If the answer is \"never,\" the cost is not hypothetical — it is lost revenue, missed opportunities, and declining market relevance.\n\nMore than 60% of professionals now use AI systems for work-related research. Yet most businesses appear in fewer than 10% of AI-generated answers — even when they rank well on Google. Why? Because traditional SEO was never designed for AI search. AI systems don't rank websites. They cite sources inside generated answers. There is no page two. You're either referenced — or invisible.\n\nAfter analyzing 50+ businesses over eleven months, this book presents the complete Generative Engine Optimization framework: foundation architecture, the Atomic Answer Block content system, a 90-day execution plan, authority signals, distribution strategy, and measurement protocols.\n\nIt's the third book in The Business Strategy Series — the execution playbook that follows two decades of strategic groundwork, not a standalone trend.",
     whoItsFor:
       "Business owners, marketers, and strategists who want their business cited by AI platforms like ChatGPT, Claude, and Perplexity — not just ranked on Google.",
     keyTakeaways: [
@@ -188,39 +169,9 @@ export const books: Book[] = [
           "Applied over an 11-month research initiative analyzing 50+ businesses, the GEO framework increased AI citation visibility from 4% to 43% in 90 days for one business, generating more than $50,000 in directly attributable revenue.",
       },
       {
-        question: "Who should read The Complete Guide to Dominating AI Search?",
+        question: "How does this book relate to Parham Shariat's other books?",
         answer:
-          "Business owners, marketers, and strategists who want their business recommended by AI platforms rather than just ranked on Google — anyone whose prospects have started asking AI instead of searching.",
-      },
-    ],
-  },
-  {
-    slug: "digital-real-estate",
-    title: "Digital Real Estate",
-    subtitle: "How to Own More Space on the Internet",
-    seriesPosition: null,
-    inCoreSeries: false,
-    buyUrl: "https://a.co/d/032T6v07",
-    coverImage: {
-      src: "/books/digital-real-estate.jpg",
-      width: 807,
-      height: 1235,
-    },
-    accentColor: "#8E1F9C",
-    isPlaceholder: true,
-    shortDescription: "[[PLACEHOLDER — DO NOT PUBLISH]]",
-    mediumDescription: "[[PLACEHOLDER — DO NOT PUBLISH]]",
-    whoItsFor: "[[PLACEHOLDER — DO NOT PUBLISH]]",
-    keyTakeaways: [],
-    faq: [
-      {
-        question: "Who wrote Digital Real Estate: How to Own More Space on the Internet?",
-        answer:
-          "Digital Real Estate: How to Own More Space on the Internet was written by Parham Shariat, business strategist and author of The Business Strategy Series.",
-      },
-      {
-        question: "Where can I buy Digital Real Estate?",
-        answer: "Digital Real Estate is available on Amazon.",
+          "It's the third book in The Business Strategy Series, and the execution playbook: The Business Strategy Plan establishes strategic identity, Digital Real Estate identifies the shift toward owning your digital footprint, and this book supplies the step-by-step system for getting cited by AI once that foundation is in place.",
       },
     ],
   },
@@ -228,8 +179,8 @@ export const books: Book[] = [
     slug: "six-ways-to-make-a-seven",
     title: "Six Ways to Make a Seven",
     subtitle: "Knowing When to Walk Away",
-    seriesPosition: null,
-    inCoreSeries: false,
+    seriesPosition: 4,
+    journeyRole: "For a Younger Audience",
     buyUrl: "https://a.co/d/0dz0a1B2",
     coverImage: {
       src: "/books/six-ways-to-make-a-seven.jpg",
@@ -248,16 +199,71 @@ export const books: Book[] = [
       {
         question: "Who wrote Six Ways to Make a Seven?",
         answer:
-          "Six Ways to Make a Seven: Knowing When to Walk Away was written by Parham Shariat, business strategist and author of The Business Strategy Series.",
+          "Six Ways to Make a Seven: Knowing When to Walk Away was written by Parham Shariat, author of The Business Strategy Series and Founder & Chief Strategy Officer of ReTHINK CNERGY.",
       },
       {
         question: "Who is Six Ways to Make a Seven written for?",
         answer:
-          "Six Ways to Make a Seven is written for a distinct, younger entrepreneurial audience.",
+          "Six Ways to Make a Seven is written for a distinct, younger entrepreneurial audience, set apart from the core three-book strategy series.",
       },
       {
         question: "Where can I buy Six Ways to Make a Seven?",
         answer: "Six Ways to Make a Seven is available on Amazon.",
+      },
+    ],
+  },
+  {
+    slug: "rockefeller-letters",
+    title: "The 38 Letters of Rockefeller to His Son",
+    subtitle: "With Author's Reflections",
+    seriesPosition: 5,
+    journeyRole: "Companion Read",
+    buyUrl: "https://a.co/d/06Ea10X4",
+    coverImage: {
+      src: "/books/38-letters-rockefeller.jpg",
+      width: 2400,
+      height: 2400,
+    },
+    accentColor: "#C81E1E",
+    isPlaceholder: false,
+    shortDescription:
+      "Thirty-eight letters. Timeless lessons. The private counsel John D. Rockefeller gave his son on discipline, judgment, responsibility, and the long view required to build something that lasts. Not advice meant to comfort — but wisdom meant to forge resilience in the next generation of leaders.",
+    mediumDescription:
+      "What makes these letters enduring is not their origin in the Gilded Age, but their focus on questions that confront every serious leader: How do you think clearly under pressure? How do you build something that lasts? How do you prepare the next generation not merely to inherit, but to lead?\n\nRockefeller's counsel is strategic, psychological, and unforgiving in its honesty. Each letter addresses discipline, judgment, responsibility, and the long view required to steward organizations, capital, and influence across decades.\n\nThis is a companion volume within The Business Strategy Series — the leadership and philosophical reading that complements the strategic and tactical frameworks in the other three books, presented with Parham Shariat's own reflections connecting Rockefeller's counsel to modern business leadership.\n\nFor entrepreneurs, executives, and long-term thinkers who seek not only to build organizations — but to lead them with clarity, discipline, and purpose.",
+    whoItsFor:
+      "Entrepreneurs, executives, and long-term thinkers who seek not only to build organizations, but to lead them with clarity, discipline, and purpose.",
+    keyTakeaways: [
+      "Wealth without wisdom is merely inheritance, and power without principle is only temporary.",
+      "The letters weren't meant to comfort — they were designed to forge resilience, a kind of honest counsel modern leadership often lacks.",
+      "Judgment and discipline are learned through deliberate practice, not inherited; the letters provide a curriculum for developing both.",
+      "Long-term thinking is a competitive advantage most leaders talk about but few practice — Rockefeller measured decisions in decades, not quarters.",
+      "As a companion volume within The Business Strategy Series, this book provides the leadership and philosophical reading that complements the series' strategic and tactical frameworks.",
+    ],
+    faq: [
+      {
+        question: "Why did Parham Shariat write about Rockefeller's letters to his son?",
+        answer:
+          "Parham wrote about Rockefeller's letters because he saw a gap: business audiences are saturated with get-rich-quick tactics and unproven advice but starving for wisdom about how to think. Rockefeller's private counsel to his son isn't motivational fluff — it's unfiltered lessons on judgment, discipline, and the long view, which modern leaders need but rarely get anywhere else.",
+      },
+      {
+        question: "What is the most valuable lesson from Rockefeller's letters for today's entrepreneurs?",
+        answer:
+          "Think in decades, not quarters. Rockefeller built across generations by measuring success differently, and he understood that judgment isn't inherited — it's developed through deliberate practice. His letters function as a curriculum for developing that judgment, something modern business education rarely provides.",
+      },
+      {
+        question: "How does this book fit within The Business Strategy Series?",
+        answer:
+          "It's a companion volume, not a sequential step. Where the other three books cover strategic design, digital footprint, and AI-search execution, The 38 Letters of Rockefeller to His Son provides the leadership and philosophical foundation underneath all of it — how leaders must think in order to preserve, scale, and govern what they build.",
+      },
+      {
+        question: "What time period do the 38 letters span?",
+        answer:
+          "The letters span 1855 to 1936, offering genuine historical correspondence from John D. Rockefeller to his son, presented here with the author's reflections connecting that counsel to modern business leadership.",
+      },
+      {
+        question: "Who should read The 38 Letters of Rockefeller to His Son?",
+        answer:
+          "Entrepreneurs, executives, and long-term thinkers who want to lead the organizations they build with clarity, discipline, and purpose — not just build them.",
       },
     ],
   },
@@ -270,33 +276,35 @@ export function getBookBySlug(slug: string): Book | undefined {
 /** Meta descriptions must never leak the raw [[PLACEHOLDER]] marker text. */
 export function getMetaDescription(book: Book): string {
   if (book.isPlaceholder) {
-    return `${book.title}: ${book.subtitle} — a book by Parham Shariat, business strategist and author.`;
+    return `${book.title}: ${book.subtitle} — a book by Parham Shariat, author and Founder & Chief Strategy Officer of ReTHINK CNERGY.`;
   }
   return book.shortDescription;
 }
 
-export const coreSeriesBooks = books.filter((book) => book.inCoreSeries);
-export const standaloneBooks = books.filter((book) => !book.inCoreSeries);
+/** The three-book core journey, in narrative order: strategy → footprint → execution. */
+export const journeyBooks = books.filter((book) => book.seriesPosition <= 3);
+/** Set apart from the core journey: a younger-audience title and a companion/bonus read. */
+export const furtherReadingBooks = books.filter((book) => book.seriesPosition > 3);
 
 export const seriesFaq: BookFaq[] = [
   {
     question: "What's the story behind Parham Shariat's AI search research?",
     answer:
-      "Parham's wife is an attorney. A potential client told her that ChatGPT had recommended her practice out of thousands of lawyers in the area. That moment launched an 11-month research initiative analyzing 50+ businesses to identify the exact signals that trigger AI citations — research that became The Complete Guide to Dominating AI Search.",
+      "Parham's wife is an attorney. A potential client told her that ChatGPT had recommended her practice out of thousands of lawyers in the area. That moment launched an 11-month research initiative analyzing 50+ businesses to identify the exact signals that trigger AI citations — research that became The Complete Guide to Dominating AI Search, the third book in a series built on two decades of strategy work.",
   },
   {
-    question: "How do the three books in The Business Strategy Series work together?",
+    question: "How do the books in The Business Strategy Series work together?",
     answer:
-      "The Business Strategy Plan provides the methodology for designing a business. The 38 Letters of Rockefeller to His Son provides the leadership wisdom for executing and scaling it. The Complete Guide to Dominating AI Search provides the tactical playbook for being discovered in the AI search landscape. Strategy, leadership, then visibility — in that order.",
+      "They follow a journey: The Business Strategy Plan lays the strategic foundation, Digital Real Estate identifies the shift toward owning your digital footprint as AI reshaped discovery, and The Complete Guide to Dominating AI Search supplies the execution playbook for getting cited by AI. Six Ways to Make a Seven is written separately for a younger entrepreneurial audience, and The 38 Letters of Rockefeller to His Son is a companion volume on leadership and judgment.",
   },
   {
     question: "What do these books ask readers to do differently?",
     answer:
-      "Stop building reactively, stop assuming what worked five years ago still works, and stop skipping strategy to jump straight into tactics. In the age of AI, clarity of strategy is the ultimate competitive advantage — a pattern Parham has observed across every successful business he has worked with.",
+      "Stop building reactively, stop assuming what worked five years ago still works, and stop skipping strategy to jump straight into tactics. Clarity of strategy — applied consistently as the landscape changes — is the pattern Parham Shariat has observed across two decades and every successful business he has worked with.",
   },
   {
-    question: "How does Parham Shariat's international business experience shape this series?",
+    question: "How does Parham Shariat's 20-year business background shape this series?",
     answer:
-      "Parham has built and advised companies across three continents, including the US, UAE, and emerging markets. That experience taught him that tactics change by context, but strategic principles are universal — which is why the series pairs timeless leadership principles with current AI-search applications rather than treating them as separate subjects.",
+      "Parham has spent over twenty years building and advising companies across three continents, including large corporations and startups. That experience is what led him to identify strategy and execution as the pattern separating success from failure — the premise of The Business Strategy Plan — and later to apply that same strategic lens to how businesses get found online.",
   },
 ];

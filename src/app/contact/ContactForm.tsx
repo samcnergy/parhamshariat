@@ -52,9 +52,9 @@ export default function ContactForm() {
           className="mt-1.5 w-full border border-border bg-background px-3 py-2.5 text-base focus:border-foreground"
         >
           <option value="general">General</option>
-          <option value="media">Media</option>
+          <option value="media">Media / Podcast / Interview</option>
           <option value="speaking">Speaking</option>
-          <option value="consulting">Consulting</option>
+          <option value="consulting">Consulting (ReTHINK CNERGY)</option>
         </select>
       </div>
 

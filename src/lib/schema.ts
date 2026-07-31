@@ -1,6 +1,6 @@
 import { siteConfig, siteUrl } from "./data/site";
 import type { Book, BookFaq } from "./data/books";
-import { coreSeriesName } from "./data/books";
+import { seriesName } from "./data/books";
 
 export function personSchema() {
   return {
@@ -9,7 +9,7 @@ export function personSchema() {
     "@id": `${siteUrl}/#person`,
     name: siteConfig.name,
     url: siteUrl,
-    jobTitle: "Business Strategist & Author",
+    jobTitle: "Founder & Chief Strategy Officer, ReTHINK CNERGY",
     description: siteConfig.positioning,
     worksFor: {
       "@id": `${siteUrl}/#organization`,
@@ -76,20 +76,12 @@ export function bookSchema(book: Book) {
     author: {
       "@id": `${siteUrl}/#person`,
     },
-    ...(book.isPlaceholder
-      ? {}
-      : { description: book.shortDescription }),
-    ...(book.inCoreSeries
-      ? {
-          isPartOf: {
-            "@type": "BookSeries",
-            name: coreSeriesName,
-            ...(book.seriesPosition
-              ? { position: book.seriesPosition }
-              : {}),
-          },
-        }
-      : {}),
+    ...(book.isPlaceholder ? {} : { description: book.shortDescription }),
+    isPartOf: {
+      "@type": "BookSeries",
+      name: seriesName,
+      position: book.seriesPosition,
+    },
     offers: {
       "@type": "Offer",
       url: book.buyUrl,

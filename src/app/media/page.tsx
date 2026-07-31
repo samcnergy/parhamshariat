@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { pressFeatures } from "@/lib/data/media";
@@ -66,16 +67,28 @@ export default function MediaPage() {
         <h2 className="mt-16 font-display text-2xl font-black uppercase tracking-tight">
           Press Kit
         </h2>
-        <p className="mt-4 max-w-2xl text-base text-foreground/70">
-          For interview requests, headshots, bios, or the fact sheet, contact{" "}
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="underline decoration-border underline-offset-4 hover:decoration-foreground"
-          >
-            {siteConfig.email}
-          </a>
-          .
-        </p>
+        <div className="mt-6 flex flex-col gap-8 sm:flex-row sm:items-start">
+          <Image
+            src="/images/parham-headshot-primary.jpg"
+            alt="Professional headshot of Parham Shariat"
+            width={400}
+            height={600}
+            className="h-56 w-auto object-cover grayscale"
+          />
+          <div>
+            <p className="max-w-2xl text-base text-foreground/70">
+              For interview requests, headshots, bios, or the fact sheet,
+              contact{" "}
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="underline decoration-border underline-offset-4 hover:decoration-foreground"
+              >
+                {siteConfig.email}
+              </a>
+              .
+            </p>
+          </div>
+        </div>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           <li className="border border-border p-4 text-sm">
             Professional headshots (color) — available on request

@@ -3,12 +3,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import BookCard from "@/components/BookCard";
 import JsonLd from "@/components/JsonLd";
 import { faqPageSchema } from "@/lib/schema";
-import { coreSeriesBooks, standaloneBooks, coreSeriesName, seriesFaq } from "@/lib/data/books";
+import { journeyBooks, furtherReadingBooks, seriesName, seriesFaq } from "@/lib/data/books";
 
 export const metadata: Metadata = {
   title: "Books by Parham Shariat",
   description:
-    "Explore The Business Strategy Series by Parham Shariat — The Business Strategy Plan, The 38 Letters of Rockefeller to His Son, and The Complete Guide to Dominating AI Search — plus his standalone titles.",
+    "Field notes from 25+ years building companies: The Business Strategy Plan, Digital Real Estate, The Complete Guide to Dominating AI Search, Six Ways to Make a Seven, and The 38 Letters of Rockefeller to His Son.",
   alternates: { canonical: "/books" },
 };
 
@@ -24,29 +24,28 @@ export default function BooksPage() {
             Books
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-invert-fg/70">
-            Parham&apos;s core work is {coreSeriesName}, a three-book series
-            moving from strategic design, to leadership, to AI-era
-            visibility. His two standalone titles address more specific
-            audiences and topics.
+            Field notes from 25+ years building companies — {seriesName}
+            covers strategy, digital presence, and AI-era visibility, plus
+            two further titles for a younger audience and on leadership.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">
-          {coreSeriesName}
+          {seriesName}
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {coreSeriesBooks.map((book) => (
+          {journeyBooks.map((book) => (
             <BookCard key={book.slug} book={book} />
           ))}
         </div>
 
         <h2 className="mt-20 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">
-          Standalone Titles
+          Also by Parham
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {standaloneBooks.map((book) => (
+          {furtherReadingBooks.map((book) => (
             <BookCard key={book.slug} book={book} />
           ))}
         </div>

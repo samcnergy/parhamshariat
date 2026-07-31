@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { bookSchema, faqPageSchema } from "@/lib/schema";
 import { authorBios } from "@/lib/data/author";
-import { coreSeriesName, type Book } from "@/lib/data/books";
+import { seriesName, type Book } from "@/lib/data/books";
 
 export default function BookPageContent({ book }: { book: Book }) {
   return (
@@ -30,12 +30,9 @@ export default function BookPageContent({ book }: { book: Book }) {
             className="h-72 w-auto flex-shrink-0 object-contain shadow-2xl sm:h-96"
           />
           <div>
-            {book.inCoreSeries && (
-              <p className="text-xs font-semibold uppercase tracking-widest text-invert-fg/50">
-                {coreSeriesName}
-                {book.seriesPosition ? ` · Book ${book.seriesPosition}` : ""}
-              </p>
-            )}
+            <p className="text-xs font-semibold uppercase tracking-widest text-invert-fg/50">
+              {seriesName} · Book {book.seriesPosition}
+            </p>
             <h1 className="mt-3 font-display text-3xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl">
               {book.title}
             </h1>
@@ -123,25 +120,14 @@ export default function BookPageContent({ book }: { book: Book }) {
         )}
 
         <section className="mt-16 border border-border bg-muted p-6">
-          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-            <Image
-              src="/images/parham-headshot-primary.jpg"
-              alt="Portrait of Parham Shariat"
-              width={80}
-              height={120}
-              className="h-16 w-auto object-cover grayscale"
-            />
-            <div>
-              <p className="text-base text-foreground/80">
-                {authorBios.short}
-              </p>
-              <Link
-                href="/about"
-                className="mt-2 inline-block text-sm font-semibold underline decoration-border underline-offset-4 hover:decoration-foreground"
-              >
-                More about Parham Shariat
-              </Link>
-            </div>
+          <div className="flex flex-col items-start gap-4">
+            <p className="text-base text-foreground/80">{authorBios.short}</p>
+            <Link
+              href="/about"
+              className="text-sm font-semibold underline decoration-border underline-offset-4 hover:decoration-foreground"
+            >
+              More about Parham Shariat
+            </Link>
           </div>
         </section>
       </article>

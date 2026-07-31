@@ -4,10 +4,10 @@ export const siteUrl =
 
 export const siteConfig = {
   name: "Parham Shariat",
-  tagline: "Teaching Businesses How to Get Found by AI",
+  tagline: "Author, The Business Strategy Series",
   // Verbatim positioning statement — must match every footer, schema block, and external profile (LinkedIn, Amazon).
   positioning:
-    "Parham Shariat is a business strategist and author who developed the Generative Engine Optimization (GEO) methodology that helps businesses get recommended by AI platforms like ChatGPT, Claude, and Perplexity.",
+    "Parham Shariat is the author of The Business Strategy Series and Founder & Chief Strategy Officer of ReTHINK CNERGY.",
   email: "parham@rethinkcnergy.com",
   contactEmail: "parhamshariat@gmail.com",
   phone: "+1-619-626-7545",
@@ -40,7 +40,7 @@ export const footerNav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Books", href: "/books" },
-  { label: "Speaking & Consulting", href: "/speaking" },
+  { label: "Speaking & Media", href: "/speaking" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Insights", href: "/insights" },
   { label: "Social Responsibility", href: "/social-responsibility" },

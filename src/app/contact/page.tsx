@@ -20,8 +20,9 @@ export default function ContactPage() {
           Contact
         </h1>
         <p className="mt-4 max-w-xl text-base text-foreground/70">
-          For media inquiries, speaking engagements, consulting, or general
-          questions, send a message below or reach out directly.
+          For podcasts, interviews, speaking engagements, ReTHINK CNERGY
+          consulting inquiries, or general questions, send a message below
+          or reach out directly.
         </p>
 
         <div className="mt-6 space-y-1 text-base">
