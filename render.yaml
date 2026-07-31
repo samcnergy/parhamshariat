@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: parhamshariat
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.20.2
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://parhamshariat.com
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        value: https://wthgmbwsqlgugefwxfhk.supabase.co
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
