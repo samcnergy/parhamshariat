@@ -31,14 +31,14 @@ export default function HomePage() {
             Shariat
           </h1>
 
-          <div className="mt-12 grid items-center gap-10 sm:grid-cols-2">
+          <div className="mt-12 grid items-start justify-center gap-10 sm:grid-cols-[auto_auto] sm:justify-start">
             <Image
               src="/images/parham-headshot-glasses-2.png"
               alt="Portrait of Parham Shariat"
               width={500}
               height={750}
               priority
-              className="h-[26rem] w-auto justify-self-center object-cover sm:h-[30rem] sm:justify-self-end"
+              className="h-[28rem] w-auto justify-self-center object-cover object-top sm:h-[28rem] sm:justify-self-start"
             />
             <div className="flex flex-col items-center gap-5 sm:items-start">
               <Image
@@ -46,7 +46,7 @@ export default function HomePage() {
                 alt={`Book cover for ${featuredBook.title}: ${featuredBook.subtitle}`}
                 width={featuredBook.coverImage.width}
                 height={featuredBook.coverImage.height}
-                className="h-72 w-auto object-contain shadow-2xl sm:h-80"
+                className="h-[28rem] w-auto object-contain object-top shadow-2xl"
               />
               <div className="text-center sm:text-left">
                 <p className="font-display text-xl font-black uppercase tracking-tight">
@@ -74,9 +74,22 @@ export default function HomePage() {
         <h2 className="font-display text-3xl font-black uppercase tracking-tight sm:text-4xl">
           {writingJourney.heading}
         </h2>
-        <div className="mt-6 space-y-5 text-lg leading-relaxed text-foreground/80">
-          {writingJourney.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+        <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+          {writingJourney.intro}
+        </p>
+        <div className="mt-10 space-y-8 border-t border-border pt-8">
+          {writingJourney.stories.map((story) => (
+            <div key={story.bookSlug}>
+              <Link
+                href={`/books/${story.bookSlug}`}
+                className="text-xs font-semibold uppercase tracking-widest text-foreground/50 hover:text-foreground"
+              >
+                On {story.bookTitle}
+              </Link>
+              <p className="mt-3 text-lg leading-relaxed text-foreground/80">
+                {story.text}
+              </p>
+            </div>
           ))}
         </div>
       </section>

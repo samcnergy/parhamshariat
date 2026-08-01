@@ -51,10 +51,19 @@ export const factSheet = {
 // Sourced from the media kit's "Sample Interview Questions" answers — Parham's own account of why he writes.
 export const writingJourney = {
   heading: "Why I Write",
-  paragraphs: [
-    "My wife is an attorney. A potential client called and said ChatGPT had recommended her practice — out of thousands of lawyers in our area. That moment made me obsessed with understanding why AI recommends some businesses and ignores others, and I spent eleven months analyzing more than fifty businesses to find out. That research became The Complete Guide to Dominating AI Search.",
+  intro:
     "Working across the US, UAE, and emerging markets over twenty years taught me that tactics change by context, but strategic principles are universal — which is why I write about both timeless business fundamentals and the newest shifts in how businesses get found.",
-    "We're drowning in get-rich-quick advice and starving for wisdom about how to think. That's why The 38 Letters of Rockefeller to His Son exists: unfiltered lessons on judgment, discipline, and the long view, the kind of honest counsel most leaders never get.",
+  stories: [
+    {
+      bookSlug: "dominating-ai-search",
+      bookTitle: "The Complete Guide to Dominating AI Search",
+      text: "My wife is an attorney. A potential client called and said ChatGPT had recommended her practice — out of thousands of lawyers in our area. That moment made me obsessed with understanding why AI recommends some businesses and ignores others, and I spent eleven months analyzing more than fifty businesses to find out.",
+    },
+    {
+      bookSlug: "rockefeller-letters",
+      bookTitle: "The 38 Letters of Rockefeller to His Son",
+      text: "We're drowning in get-rich-quick advice and starving for wisdom about how to think. That's why this book exists: unfiltered lessons on judgment, discipline, and the long view, the kind of honest counsel most leaders never get.",
+    },
   ],
 } as const;
 
