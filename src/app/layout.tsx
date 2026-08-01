@@ -54,6 +54,9 @@ export default function RootLayout({
       className={`${inter.variable} ${archivo.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <noscript>
+          <style>{`[data-reveal] { opacity: 1 !important; transform: none !important; }`}</style>
+        </noscript>
         <JsonLd data={personSchema()} />
         <JsonLd data={organizationSchema()} />
         <SkipLink />

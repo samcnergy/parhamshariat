@@ -6,7 +6,7 @@ export default function BookCard({ book }: { book: Book }) {
   return (
     <Link
       href={`/books/${book.slug}`}
-      className="group flex flex-col overflow-hidden border border-border bg-background transition-colors hover:border-foreground"
+      className="group flex flex-col overflow-hidden border border-border bg-background transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-foreground hover:shadow-xl"
     >
       <div className="flex items-center justify-center bg-muted p-8">
         <Image

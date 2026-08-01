@@ -25,7 +25,7 @@ export default function AboutPage() {
         <Breadcrumbs items={[{ name: "About", path: "/about" }]} variant="dark" />
         <div className="mx-auto grid max-w-6xl items-end gap-10 px-4 pb-14 pt-6 sm:px-6 md:grid-cols-[1fr_1.4fr]">
           <Image
-            src="/images/parham-headshot-glasses-2.png"
+            src="/images/parham-headshot-glasses-bw.png"
             alt="Portrait of Parham Shariat"
             width={500}
             height={750}

@@ -6,6 +6,7 @@ import { authorBios, writingJourney } from "@/lib/data/author";
 import { books, getBookBySlug } from "@/lib/data/books";
 import { pressFeatures } from "@/lib/data/media";
 import BookCard from "@/components/BookCard";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} — ${siteConfig.tagline}`,
@@ -20,12 +21,12 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — photo + featured book, side by side */}
-      <section className="bg-invert-bg text-invert-fg">
+      <section className="overflow-hidden bg-invert-bg text-invert-fg">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-invert-fg/50">
             {siteConfig.tagline}
           </p>
-          <h1 className="mt-4 font-display text-6xl font-black uppercase leading-[0.92] tracking-tighter sm:text-7xl lg:text-8xl">
+          <h1 className="mt-4 font-display text-7xl font-black uppercase leading-[0.88] tracking-tighter sm:text-8xl lg:text-9xl">
             Parham
             <br />
             Shariat
@@ -33,7 +34,7 @@ export default function HomePage() {
 
           <div className="mt-12 grid items-start justify-center gap-10 sm:grid-cols-[auto_auto] sm:justify-start">
             <Image
-              src="/images/parham-headshot-glasses-2.png"
+              src="/images/parham-headshot-glasses-bw.png"
               alt="Portrait of Parham Shariat"
               width={500}
               height={750}
@@ -46,7 +47,7 @@ export default function HomePage() {
                 alt={`Book cover for ${featuredBook.title}: ${featuredBook.subtitle}`}
                 width={featuredBook.coverImage.width}
                 height={featuredBook.coverImage.height}
-                className="h-[28rem] w-auto object-contain object-top shadow-2xl"
+                className="h-[28rem] w-auto object-contain object-top shadow-2xl transition-transform duration-500 ease-out hover:-translate-y-2"
               />
               <div className="text-center sm:text-left">
                 <p className="font-display text-xl font-black uppercase tracking-tight">
@@ -60,7 +61,7 @@ export default function HomePage() {
                 href={featuredBook.buyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-invert-fg px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-invert-bg transition-opacity hover:opacity-85"
+                className="bg-invert-fg px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-invert-bg transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
               >
                 Buy the Book
               </a>
@@ -70,7 +71,7 @@ export default function HomePage() {
       </section>
 
       {/* Why I Write */}
-      <section className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+      <Reveal className="mx-auto max-w-3xl px-4 py-20 sm:px-6" as="section">
         <h2 className="font-display text-3xl font-black uppercase tracking-tight sm:text-4xl">
           {writingJourney.heading}
         </h2>
@@ -82,7 +83,7 @@ export default function HomePage() {
             <div key={story.bookSlug}>
               <Link
                 href={`/books/${story.bookSlug}`}
-                className="text-xs font-semibold uppercase tracking-widest text-foreground/50 hover:text-foreground"
+                className="text-xs font-semibold uppercase tracking-widest text-foreground/50 transition-colors hover:text-foreground"
               >
                 On {story.bookTitle}
               </Link>
@@ -92,24 +93,28 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </Reveal>
 
       {/* Other titles */}
       <section className="border-t border-border bg-muted">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <h2 className="font-display text-2xl font-black uppercase tracking-tight sm:text-3xl">
-            Other Titles by Parham
-          </h2>
+          <Reveal>
+            <h2 className="font-display text-2xl font-black uppercase tracking-tight sm:text-3xl">
+              Other Titles by Parham
+            </h2>
+          </Reveal>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {otherBooks.map((book) => (
-              <BookCard key={book.slug} book={book} />
+            {otherBooks.map((book, index) => (
+              <Reveal key={book.slug} delay={index * 80}>
+                <BookCard book={book} />
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Speaking, podcasts, interviews */}
-      <section className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6">
+      <Reveal className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6" as="section">
         <h2 className="font-display text-2xl font-black uppercase tracking-tight sm:text-3xl">
           Speaking, Podcasts &amp; Interviews
         </h2>
@@ -119,11 +124,11 @@ export default function HomePage() {
         </p>
         <Link
           href="/speaking"
-          className="mt-7 inline-block bg-foreground px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-background transition-opacity hover:opacity-85"
+          className="mt-7 inline-block bg-foreground px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
         >
           Get in Touch
         </Link>
-      </section>
+      </Reveal>
 
       {/* As seen in */}
       <section className="border-y border-border bg-muted">
@@ -136,7 +141,7 @@ export default function HomePage() {
               <Link
                 key={feature.outlet}
                 href="/media"
-                className="font-display text-xl font-black uppercase tracking-tight text-foreground/60 transition-colors hover:text-foreground sm:text-2xl"
+                className="font-display text-xl font-black uppercase tracking-tight text-foreground/60 transition-all duration-200 hover:-translate-y-0.5 hover:text-foreground sm:text-2xl"
               >
                 {feature.outlet}
               </Link>
@@ -146,7 +151,7 @@ export default function HomePage() {
       </section>
 
       {/* Bio teaser */}
-      <section className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6">
+      <Reveal className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6" as="section">
         <h2 className="font-display text-3xl font-black uppercase tracking-tight sm:text-4xl">
           About Parham
         </h2>
@@ -155,11 +160,11 @@ export default function HomePage() {
         </p>
         <Link
           href="/about"
-          className="mt-7 inline-block border-b-2 border-foreground pb-1 text-sm font-bold uppercase tracking-wide hover:opacity-70"
+          className="mt-7 inline-block border-b-2 border-foreground pb-1 text-sm font-bold uppercase tracking-wide transition-opacity hover:opacity-70"
         >
           Read the Full Bio
         </Link>
-      </section>
+      </Reveal>
 
       {/* Newsletter */}
       <section className="bg-invert-bg text-invert-fg">
@@ -175,7 +180,7 @@ export default function HomePage() {
             href={siteConfig.social.substack}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-block bg-invert-fg px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-invert-bg transition-opacity hover:opacity-85"
+            className="mt-8 inline-block bg-invert-fg px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-invert-bg transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
           >
             Subscribe on Substack
           </a>
