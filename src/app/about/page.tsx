@@ -72,6 +72,49 @@ export default function AboutPage() {
         </div>
       </Reveal>
 
+      {/* Bio */}
+      <Reveal as="section" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <div className="grid items-center gap-16 md:grid-cols-[1fr_1.2fr]">
+          <div className="relative mx-auto h-64 w-full max-w-sm sm:h-72">
+            <Image
+              src="/images/parham 1981.jpg"
+              alt="Parham Shariat as a child"
+              width={927}
+              height={634}
+              className="absolute left-0 top-4 w-2/3 rotate-[-4deg] object-cover shadow-xl"
+            />
+            <Image
+              src="/images/Parham and shirin (wife) 2023.jpg"
+              alt="Parham Shariat with his wife, Shirin Salamat"
+              width={1200}
+              height={1600}
+              className="absolute right-0 top-0 w-2/5 rotate-[3deg] object-cover shadow-xl"
+            />
+          </div>
+          <div className="text-lg leading-relaxed text-foreground/80">
+            <p>
+              Parham Shariat was born in Iran and moved to the United States
+              at the age of 10. He moved back to the Middle East in 2007 and
+              spent the next 11 years working for a real estate development
+              company and a multinational corporation. He is a serial
+              entrepreneur and author whose career spans over three decades
+              of building and advising companies across three continents.
+              As Founder &amp; Chief Strategy Officer of ReTHINK CNERGY, he
+              helps startups and growth-stage businesses build sustainable
+              competitive advantages through strategic design and emerging
+              technologies.
+            </p>
+            <p className="mt-4">
+              He earned his AI Strategist for Corporations certification
+              from the Wharton School of Business.
+            </p>
+            <p className="mt-4">
+              Parham lives in Southern California with his family.
+            </p>
+          </div>
+        </div>
+      </Reveal>
+
       {/* Books */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <StaggerReveal className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">

@@ -26,10 +26,10 @@ export default function SocialResponsibilityPage() {
 
         <Reveal className="mt-12 grid items-center gap-14 md:grid-cols-2">
           <Image
-            src="/images/Parham and shirin (wife) 2023.jpg"
+            src="/images/parham-headshot-glasses-2.png"
             alt="Parham Shariat"
-            width={1200}
-            height={1600}
+            width={2000}
+            height={2727}
             className="mx-auto w-full max-w-sm rotate-[2deg] object-cover shadow-xl"
           />
           <div className="text-base leading-relaxed text-foreground/80">
