@@ -10,11 +10,6 @@ export type Venture = {
 
 export const ventures: Venture[] = [
   {
-    name: "SiteMarketing.ai",
-    url: "",
-    description: "[[PLACEHOLDER — DO NOT PUBLISH]] description and URL pending confirmation from Parham.",
-  },
-  {
     name: "Powerful Blueprints",
     url: "https://www.powerfulblueprints.com",
     description:
@@ -23,15 +18,5 @@ export const ventures: Venture[] = [
       label: "Nominate someone",
       url: "https://www.powerfulblueprints.com/nominate",
     },
-  },
-  {
-    name: "ReclaimData.ai",
-    url: "https://reclaimdata.ai/",
-    description: "[[PLACEHOLDER — DO NOT PUBLISH]] one-line description pending.",
-  },
-  {
-    name: "AloHelp",
-    url: "https://www.rethinkcnergy.com/projects/alohelp",
-    description: "[[PLACEHOLDER — DO NOT PUBLISH]] one-line description pending.",
   },
 ];
