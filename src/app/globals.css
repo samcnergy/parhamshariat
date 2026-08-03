@@ -1,13 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --muted: #ededea;
-  --border: #d4d4d0;
-  --accent: #0a0a0a;
-  --invert-bg: #0a0a0a;
-  --invert-fg: #ffffff;
+  /* Raw palette — near-monochrome, one soft accent. Not swapped by OS dark
+     mode: sections alternate black/white deliberately, art-directed per
+     section rather than driven by prefers-color-scheme. */
+  --color-black: #1d1d1f;
+  --color-white: #ffffff;
+  --color-whitesmoke: #f5f5f5;
+  --color-dark-grey: #323232;
+  --color-grey-1: #888888;
+  --color-grey-2: #a5a5a5;
+  --color-grey-3: #b8b8b8;
+  --color-grey-4: #ebebeb;
+  --color-accent-blue: #eaf4ff;
+
+  /* Semantic aliases used throughout components */
+  --background: var(--color-white);
+  --foreground: var(--color-black);
+  --muted: var(--color-whitesmoke);
+  --border: var(--color-grey-4);
+  --invert-bg: var(--color-black);
+  --invert-fg: var(--color-white);
 }
 
 @theme inline {
@@ -15,30 +28,49 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
-  --color-accent: var(--accent);
   --color-invert-bg: var(--invert-bg);
   --color-invert-fg: var(--invert-fg);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-archivo);
-}
+  --color-accent-blue: var(--color-accent-blue);
+  --color-black: var(--color-black);
+  --color-white: var(--color-white);
+  --color-whitesmoke: var(--color-whitesmoke);
+  --color-dark-grey: var(--color-dark-grey);
+  --color-grey-1: var(--color-grey-1);
+  --color-grey-2: var(--color-grey-2);
+  --color-grey-3: var(--color-grey-3);
+  --color-grey-4: var(--color-grey-4);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #f5f5f3;
-    --muted: #171715;
-    --border: #313130;
-    --accent: #f5f5f3;
-    --invert-bg: #f5f5f3;
-    --invert-fg: #0a0a0a;
-  }
+  --font-sans: var(--font-switzer);
+  --font-display: var(--font-switzer);
+  --font-serif: var(--font-fraunces);
+
+  /* Display type scale — uppercase, line-height 0.85, regular weight.
+     Size does the work, never boldness. */
+  --text-display-xxs: 1.25rem;
+  --text-display-xxs--line-height: 0.85;
+  --text-display-xs: 1.5rem;
+  --text-display-xs--line-height: 0.85;
+  --text-display-s: 2rem;
+  --text-display-s--line-height: 0.85;
+  --text-display-m: 2.5rem;
+  --text-display-m--line-height: 0.85;
+  --text-display-l: 3rem;
+  --text-display-l--line-height: 0.85;
+  --text-display-xl: 4rem;
+  --text-display-xl--line-height: 0.85;
+  --text-display-xxl: 5rem;
+  --text-display-xxl--line-height: 0.85;
+  --text-display-super: 7rem;
+  --text-display-super--line-height: 0.85;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
-  line-height: 1.65;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 h1,
@@ -46,7 +78,53 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -0.01em;
+}
+
+.font-serif-quote {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.eyebrow {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.01rem;
+}
+
+/* Marquee — repeating horizontal scroll, paused on hover, disabled for
+   reduced motion (see prefers-reduced-motion block below). */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Spinning accent icon */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spin-slow 7s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -57,6 +135,11 @@ h4 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
   }
 }
 
@@ -69,7 +152,7 @@ h4 {
   color: var(--background);
   padding: 0.75rem 1.25rem;
   border-radius: 0.375rem;
-  font-weight: 600;
+  font-weight: 400;
   transition: top 0.15s ease;
 }
 
@@ -78,6 +161,6 @@ h4 {
 }
 
 :focus-visible {
-  outline: 3px solid #2d3b87;
+  outline: 3px solid var(--color-accent-blue);
   outline-offset: 2px;
 }

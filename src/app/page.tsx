@@ -2,11 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/data/site";
-import { authorBios, writingJourney } from "@/lib/data/author";
 import { books, getBookBySlug } from "@/lib/data/books";
 import { pressFeatures } from "@/lib/data/media";
-import BookCard from "@/components/BookCard";
+import HeroCarousel from "@/components/HeroCarousel";
+import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
+import StaggerReveal from "@/components/StaggerReveal";
+import StickyPhotoStack from "@/components/StickyPhotoStack";
+import ImageWipeReveal from "@/components/ImageWipeReveal";
+import SpinningMark from "@/components/SpinningMark";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} — ${siteConfig.tagline}`,
@@ -14,139 +18,178 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const heroSlides = [
+  { src: "/images/parham-headshot-glasses-2.png", alt: "Portrait of Parham Shariat" },
+  { src: "/images/Parham-kayaking.jpg", alt: "Parham Shariat paddleboarding near Newport Beach" },
+  { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor in Newport Beach" },
+];
+
+const stats = [
+  { number: "30", caption: "Years — several countries, C-level roles in multinational companies" },
+  { number: "5", caption: "Books published" },
+  { number: "2", caption: "Companies founded — ReTHINK CNERGY and Powerful Blueprints" },
+];
+
 export default function HomePage() {
   const featuredBook = getBookBySlug("digital-real-estate")!;
   const otherBooks = books.filter((book) => book.slug !== featuredBook.slug);
 
   return (
     <>
-      {/* Hero — photo + featured book, side by side */}
-      <section className="overflow-hidden bg-invert-bg text-invert-fg">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
-          <h1 className="sr-only">Parham Shariat</h1>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-invert-fg/50">
-            {siteConfig.tagline}
-          </p>
-
-          <div className="mt-8 grid items-start justify-center gap-10 sm:grid-cols-[auto_auto] sm:justify-start">
-            <Image
-              src="/images/parham-headshot-glasses-bw.png"
-              alt="Portrait of Parham Shariat"
-              width={500}
-              height={750}
-              priority
-              className="h-[28rem] w-auto justify-self-center object-cover object-top sm:h-[28rem] sm:justify-self-start"
-            />
-            <div className="flex flex-col items-center gap-10 sm:items-start">
-              <p className="max-w-md text-center font-display text-5xl font-black uppercase leading-[0.9] tracking-tight sm:text-left sm:text-6xl">
-                Empower
-                <br />
-                The Next
-                <br />
-                Generation
-              </p>
-              <div className="flex flex-col items-center gap-5 sm:items-start">
-                <Image
-                  src={featuredBook.coverImage.src}
-                  alt={`Book cover for ${featuredBook.title}: ${featuredBook.subtitle}`}
-                  width={featuredBook.coverImage.width}
-                  height={featuredBook.coverImage.height}
-                  className="h-56 w-auto object-contain object-top shadow-2xl transition-transform duration-500 ease-out hover:-translate-y-2"
-                />
-                <div className="text-center sm:text-left">
-                  <p className="font-display text-xl font-black uppercase tracking-tight">
-                    {featuredBook.title}
-                  </p>
-                  <p className="mt-1 text-sm text-invert-fg/60">
-                    {featuredBook.subtitle}
-                  </p>
-                </div>
-                <a
-                  href={featuredBook.buyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-invert-fg px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-invert-bg transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
-                >
-                  Buy the Book
-                </a>
-              </div>
-            </div>
-          </div>
+      {/* Hero — full-bleed photo carousel, nav floats transparent over it */}
+      <section className="relative flex h-screen min-h-[36rem] items-end overflow-hidden bg-black text-white">
+        <HeroCarousel slides={heroSlides} />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24">
+          <h1 className="font-display text-display-xl uppercase leading-[0.85] sm:text-display-super">
+            Parham
+            <br />
+            Shariat
+          </h1>
+          <p className="eyebrow mt-6 text-white/80">{siteConfig.tagline}</p>
         </div>
       </section>
 
-      {/* Why I Write */}
-      <Reveal className="mx-auto max-w-3xl px-4 py-20 sm:px-6" as="section">
-        <h2 className="font-display text-3xl font-black uppercase tracking-tight sm:text-4xl">
-          {writingJourney.heading}
-        </h2>
-        <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-          {writingJourney.intro}
-        </p>
-        <div className="mt-10 space-y-8 border-t border-border pt-8">
-          {writingJourney.stories.map((story) => (
-            <div key={story.bookSlug}>
-              <Link
-                href={`/books/${story.bookSlug}`}
-                className="text-xs font-semibold uppercase tracking-widest text-foreground/50 transition-colors hover:text-foreground"
-              >
-                On {story.bookTitle}
-              </Link>
-              <p className="mt-3 text-lg leading-relaxed text-foreground/80">
-                {story.text}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Reveal>
+      <Marquee text="Twenty-Five Years of Strategy" />
 
-      {/* Other titles */}
-      <section className="border-t border-border bg-muted">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <Reveal>
-            <h2 className="font-display text-2xl font-black uppercase tracking-tight sm:text-3xl">
-              Other Titles by Parham
-            </h2>
-          </Reveal>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {otherBooks.map((book, index) => (
-              <Reveal key={book.slug} delay={index * 80}>
-                <BookCard book={book} />
-              </Reveal>
-            ))}
-          </div>
+      {/* Why I wrote these books — Fraunces serif pull-quote */}
+      <Reveal as="section" className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
+        <div className="eyebrow flex items-center gap-3 text-grey-1">
+          <SpinningMark className="text-black" />
+          Why I Write
         </div>
-      </section>
-
-      {/* Speaking, podcasts, interviews */}
-      <Reveal className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6" as="section">
-        <h2 className="font-display text-2xl font-black uppercase tracking-tight sm:text-3xl">
-          Speaking, Podcasts &amp; Interviews
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base text-foreground/70">
-          Parham is open to collaborating on speaking engagements, podcast
-          appearances, and interviews.
-        </p>
-        <Link
-          href="/speaking"
-          className="mt-7 inline-block bg-foreground px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
+        <blockquote
+          className="font-serif-quote mt-6 text-display-xs italic leading-tight sm:text-display-s"
+          style={{ textIndent: "3rem" }}
         >
-          Get in Touch
-        </Link>
+          I&apos;ve been lucky enough to learn from the best — and unlucky
+          enough to make plenty of mistakes along the way. My travels and the
+          businesses I&apos;ve built taught me how to pivot quickly when
+          something goes wrong, before it turns into a disaster. That&apos;s
+          where my strategic thinking comes from — not a textbook, but years
+          of being in the room when things worked and when they didn&apos;t.
+        </blockquote>
       </Reveal>
 
-      {/* As seen in */}
-      <section className="border-y border-border bg-muted">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">
-            As Seen In
+      <Marquee text="None of It From a Textbook" variant="dark" reverse />
+
+      {/* Stats — full-width "super" scale moments, alternating bg */}
+      {stats.map((stat, i) => (
+        <Reveal
+          as="section"
+          key={stat.number}
+          className={`border-b border-grey-4 px-4 py-20 text-center sm:px-6 ${
+            i % 2 === 1 ? "bg-black text-white" : ""
+          }`}
+        >
+          <p className="font-display text-display-super uppercase">{stat.number}</p>
+          <p className="eyebrow mx-auto mt-2 max-w-md text-current/70">{stat.caption}</p>
+        </Reveal>
+      ))}
+
+      {/* Founding story — sticky-pinned headline over scrolling photos */}
+      <StickyPhotoStack
+        images={[
+          { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor" },
+          { src: "/images/Parham-kayaking.jpg", alt: "Parham Shariat paddleboarding" },
+          { src: "/images/parham-headshot-glasses-2.png", alt: "Portrait of Parham Shariat" },
+        ]}
+        headline={
+          <p className="font-display text-display-m uppercase leading-[0.85] sm:text-display-xl">
+            25 Years.
+            <br />3 Continents.
+            <br />5 Books.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-5">
+        }
+      />
+
+      {/* Books — black bg, large covers */}
+      <section className="bg-black py-24 text-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="eyebrow text-white/50">The Business Strategy Series</p>
+          <div className="mt-8 grid items-center gap-12 md:grid-cols-[1fr_1.1fr]">
+            <Image
+              src={featuredBook.coverImage.src}
+              alt={`Book cover for ${featuredBook.title}: ${featuredBook.subtitle}`}
+              width={featuredBook.coverImage.width}
+              height={featuredBook.coverImage.height}
+              className="h-[26rem] w-auto object-contain shadow-2xl"
+            />
+            <div>
+              <h2 className="font-display text-display-m uppercase leading-[0.85] sm:text-display-l">
+                {featuredBook.title}
+              </h2>
+              <p className="mt-4 text-white/60">{featuredBook.subtitle}</p>
+              <a
+                href={featuredBook.buyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block bg-white px-7 py-3.5 text-sm text-black transition-opacity hover:opacity-85"
+              >
+                Buy the Book
+              </a>
+            </div>
+          </div>
+
+          <StaggerReveal className="mt-20 grid grid-cols-2 border-t border-l border-white/20 sm:grid-cols-4">
+            {otherBooks.map((book) => (
+              <Link
+                key={book.slug}
+                href={`/books/${book.slug}`}
+                className="group flex flex-col items-center gap-4 border-r border-b border-white/20 p-8 text-center transition-colors hover:bg-white/5"
+              >
+                <Image
+                  src={book.coverImage.src}
+                  alt={`Book cover for ${book.title}: ${book.subtitle}`}
+                  width={book.coverImage.width}
+                  height={book.coverImage.height}
+                  className="h-40 w-auto object-contain shadow-lg transition-transform duration-300 group-hover:-translate-y-1.5"
+                />
+                <p className="text-xs text-white/70">{book.title}</p>
+              </Link>
+            ))}
+          </StaggerReveal>
+        </div>
+      </section>
+
+      {/* About / personal — rotated photo, image-wipe reveal */}
+      <Reveal as="section" className="mx-auto max-w-5xl px-4 py-24 sm:px-6">
+        <div className="grid items-center gap-14 md:grid-cols-2">
+          <ImageWipeReveal
+            src="/images/Parham-kayaking.jpg"
+            alt="Parham Shariat paddleboarding near Newport Beach"
+            width={1536}
+            height={2048}
+            containerClassName="mx-auto w-fit rotate-[-3deg] shadow-xl"
+            imageClassName="h-[26rem] w-auto object-cover"
+          />
+          <div>
+            <p className="eyebrow text-grey-1">Off the Clock</p>
+            <p className="mt-4 text-lg leading-relaxed">
+              Outside of work, I enjoy learning, writing, and getting out on
+              the water — paddleboarding or kayaking whenever I can. I live
+              in Southern California with my wife, Shirin Salamat, an
+              attorney and my biggest supporter.
+            </p>
+            <Link
+              href="/about"
+              className="mt-6 inline-block border-b border-black pb-1 text-sm transition-opacity hover:opacity-60"
+            >
+              Read the Full Story
+            </Link>
+          </div>
+        </div>
+      </Reveal>
+
+      {/* As seen in — hairline grid */}
+      <section className="border-t border-grey-4">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="eyebrow px-2 py-6 text-grey-1">As Seen In</p>
+          <div className="grid grid-cols-2 border-t border-l border-grey-4 sm:grid-cols-4">
             {pressFeatures.map((feature) => (
               <Link
                 key={feature.outlet}
                 href="/media"
-                className="font-display text-xl font-black uppercase tracking-tight text-foreground/60 transition-all duration-200 hover:-translate-y-0.5 hover:text-foreground sm:text-2xl"
+                className="flex items-center justify-center border-r border-b border-grey-4 px-6 py-12 font-display text-display-xxs uppercase text-grey-2 transition-colors hover:text-black sm:text-display-xs"
               >
                 {feature.outlet}
               </Link>
@@ -155,42 +198,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bio teaser */}
-      <Reveal className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6" as="section">
-        <h2 className="font-display text-3xl font-black uppercase tracking-tight sm:text-4xl">
-          About Parham
+      {/* Speaking / podcasts — the one accent-blue CTA band */}
+      <Reveal
+        as="section"
+        className="bg-accent-blue px-4 py-24 text-center sm:px-6"
+      >
+        <h2 className="font-display text-display-m uppercase leading-[0.85] sm:text-display-l">
+          Speaking, Podcasts
+          <br />
+          &amp; Interviews
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/80">
-          {authorBios.short}
+        <p className="mx-auto mt-6 max-w-xl">
+          I&apos;m open to collaborating on speaking engagements, podcast
+          appearances, and interviews.
         </p>
         <Link
-          href="/about"
-          className="mt-7 inline-block border-b-2 border-foreground pb-1 text-sm font-bold uppercase tracking-wide transition-opacity hover:opacity-70"
+          href="/speaking"
+          className="mt-8 inline-block bg-black px-7 py-3.5 text-sm text-white transition-opacity hover:opacity-85"
         >
-          Read the Full Bio
+          Get in Touch
         </Link>
       </Reveal>
-
-      {/* Newsletter */}
-      <section className="bg-invert-bg text-invert-fg">
-        <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6">
-          <h2 className="font-display text-3xl font-black uppercase tracking-tight sm:text-4xl">
-            AI Search Insider
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base text-invert-fg/70">
-            Get Parham&apos;s ongoing writing on business strategy and AI-era
-            visibility, straight from the source.
-          </p>
-          <a
-            href={siteConfig.social.substack}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-block bg-invert-fg px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-invert-bg transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
-          >
-            Subscribe on Substack
-          </a>
-        </div>
-      </section>
     </>
   );
 }

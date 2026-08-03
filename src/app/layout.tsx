@@ -1,25 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Archivo } from "next/font/google";
 import "./globals.css";
+import { switzer, fraunces } from "@/fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
 import JsonLd from "@/components/JsonLd";
+import PageLoadWipe from "@/components/PageLoadWipe";
 import { personSchema, organizationSchema } from "@/lib/schema";
 import { siteConfig, siteUrl } from "@/lib/data/site";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  weight: ["700", "900"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -51,14 +39,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${archivo.variable} h-full antialiased`}
+      className={`${switzer.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <noscript>
-          <style>{`[data-reveal] { opacity: 1 !important; transform: none !important; }`}</style>
+          <style>{`[data-reveal] { opacity: 1 !important; transform: none !important; } [data-page-wipe] { display: none !important; }`}</style>
         </noscript>
         <JsonLd data={personSchema()} />
         <JsonLd data={organizationSchema()} />
+        <PageLoadWipe />
         <SkipLink />
         <Header />
         <main id="main-content" className="flex-1">
