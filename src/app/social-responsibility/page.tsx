@@ -27,7 +27,7 @@ export default function SocialResponsibilityPage() {
             alt="Parham Shariat"
             width={620}
             height={620}
-            className="h-56 w-auto object-cover"
+            className="h-[42rem] w-auto object-cover"
           />
           <div className="border border-dashed border-border p-6 text-base leading-relaxed text-foreground/70">
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-foreground/40">
