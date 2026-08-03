@@ -14,9 +14,7 @@ export default function PrivacyPage() {
       <Breadcrumbs items={[{ name: "Privacy Policy", path: "/privacy" }]} />
 
       <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-        <h1 className="font-display text-4xl font-black uppercase tracking-tight sm:text-5xl">
-          Privacy Policy
-        </h1>
+        <h1 className="text-display-m sm:text-display-l">Privacy Policy</h1>
 
         <div className="mt-6 space-y-6 text-base text-foreground/80">
           <p>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Social Responsibility",
@@ -16,18 +17,20 @@ export default function SocialResponsibilityPage() {
         items={[{ name: "Social Responsibility", path: "/social-responsibility" }]}
       />
 
-      <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-        <h1 className="font-display text-4xl font-black uppercase tracking-tight sm:text-5xl">
-          Social Responsibility
-        </h1>
+      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+        <Reveal>
+          <h1 className="text-display-m sm:text-display-l">
+            Social Responsibility
+          </h1>
+        </Reveal>
 
-        <div className="mt-8 flex flex-col gap-8 sm:flex-row sm:items-start">
+        <Reveal className="mt-12 grid items-center gap-14 md:grid-cols-2">
           <Image
-            src="/images/parham-headshot-newport.jpg"
+            src="/images/Parham and shirin (wife) 2023.jpg"
             alt="Parham Shariat"
-            width={620}
-            height={620}
-            className="h-[42rem] w-auto object-cover"
+            width={1200}
+            height={1600}
+            className="mx-auto w-full max-w-sm rotate-[2deg] object-cover shadow-xl"
           />
           <div className="text-base leading-relaxed text-foreground/80">
             <p>
@@ -44,7 +47,7 @@ export default function SocialResponsibilityPage() {
               mine.
             </p>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

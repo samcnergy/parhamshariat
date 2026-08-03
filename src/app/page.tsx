@@ -155,10 +155,10 @@ export default function HomePage() {
       <Reveal as="section" className="mx-auto max-w-5xl px-4 py-24 sm:px-6">
         <div className="grid items-center gap-14 md:grid-cols-2">
           <ImageWipeReveal
-            src="/images/Parham-kayaking.jpg"
-            alt="Parham Shariat paddleboarding near Newport Beach"
-            width={1536}
-            height={2048}
+            src="/images/Parham and Shirin 2024.jpeg"
+            alt="Parham Shariat with his wife, Shirin Salamat"
+            width={2316}
+            height={3088}
             containerClassName="mx-auto w-fit rotate-[-3deg] shadow-xl"
             imageClassName="h-[26rem] w-auto object-cover"
           />

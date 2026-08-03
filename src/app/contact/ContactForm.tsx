@@ -14,7 +14,7 @@ export default function ContactForm() {
   return (
     <form action={formAction} className="mt-8 max-w-xl space-y-5" noValidate>
       <div>
-        <label htmlFor="name" className="block text-sm font-medium">
+        <label htmlFor="name" className="eyebrow block">
           Name
         </label>
         <input
@@ -28,7 +28,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium">
+        <label htmlFor="email" className="eyebrow block">
           Email
         </label>
         <input
@@ -42,7 +42,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="reason" className="block text-sm font-medium">
+        <label htmlFor="reason" className="eyebrow block">
           Reason for contact
         </label>
         <select
@@ -59,7 +59,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium">
+        <label htmlFor="message" className="eyebrow block">
           Message
         </label>
         <textarea
@@ -76,8 +76,8 @@ export default function ContactForm() {
           <p
             className={
               state.status === "success"
-                ? "text-sm font-medium text-green-700 dark:text-green-400"
-                : "text-sm font-medium text-red-700 dark:text-red-400"
+                ? "text-sm text-green-700 dark:text-green-400"
+                : "text-sm text-red-700 dark:text-red-400"
             }
           >
             {state.message}
@@ -88,7 +88,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="bg-foreground px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-background transition-opacity hover:opacity-85 disabled:opacity-60"
+        className="eyebrow bg-foreground px-7 py-3.5 text-background transition-opacity hover:opacity-85 disabled:opacity-60"
       >
         {pending ? "Sending…" : "Send Message"}
       </button>

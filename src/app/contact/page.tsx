@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Reveal from "@/components/Reveal";
 import ContactForm from "./ContactForm";
 import { siteConfig } from "@/lib/data/site";
 
@@ -15,10 +16,8 @@ export default function ContactPage() {
     <>
       <Breadcrumbs items={[{ name: "Contact", path: "/contact" }]} />
 
-      <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-        <h1 className="font-display text-4xl font-black uppercase tracking-tight sm:text-5xl">
-          Contact
-        </h1>
+      <Reveal as="section" className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+        <h1 className="text-display-m sm:text-display-l">Contact</h1>
         <p className="mt-4 max-w-xl text-base text-foreground/70">
           For podcasts, interviews, speaking engagements, ReTHINK CNERGY
           consulting inquiries, or general questions, send a message below
@@ -45,7 +44,7 @@ export default function ContactPage() {
         </div>
 
         <ContactForm />
-      </section>
+      </Reveal>
     </>
   );
 }

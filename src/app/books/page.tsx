@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BookCard from "@/components/BookCard";
 import JsonLd from "@/components/JsonLd";
+import Reveal from "@/components/Reveal";
+import StaggerReveal from "@/components/StaggerReveal";
 import { faqPageSchema } from "@/lib/schema";
 import { journeyBooks, furtherReadingBooks, seriesName, seriesFaq } from "@/lib/data/books";
 
@@ -17,14 +19,12 @@ export default function BooksPage() {
     <>
       <JsonLd data={faqPageSchema(seriesFaq)} />
 
-      <section className="bg-invert-bg text-invert-fg">
+      <section className="bg-black text-white">
         <Breadcrumbs items={[{ name: "Books", path: "/books" }]} variant="dark" />
         <div className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6">
-          <h1 className="font-display text-5xl font-black uppercase leading-[0.95] tracking-tighter sm:text-6xl">
-            Books
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-invert-fg/70">
-            Field notes from 25+ years building companies — {seriesName}
+          <h1 className="text-display-l sm:text-display-xl">Books</h1>
+          <p className="mt-6 max-w-2xl text-lg text-white/70">
+            Field notes from 25+ years building companies — {seriesName}{" "}
             covers strategy, digital presence, and AI-era visibility, plus
             two further titles for a younger audience and on leadership.
           </p>
@@ -32,37 +32,37 @@ export default function BooksPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">
-          {seriesName}
-        </h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal>
+          <p className="eyebrow text-grey-1">{seriesName}</p>
+        </Reveal>
+        <StaggerReveal className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {journeyBooks.map((book) => (
             <BookCard key={book.slug} book={book} />
           ))}
-        </div>
+        </StaggerReveal>
 
-        <h2 className="mt-20 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/50">
-          Also by Parham
-        </h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal>
+          <p className="eyebrow mt-20 text-grey-1">Also by Parham</p>
+        </Reveal>
+        <StaggerReveal className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {furtherReadingBooks.map((book) => (
             <BookCard key={book.slug} book={book} />
           ))}
-        </div>
+        </StaggerReveal>
 
-        <h2 className="mt-20 font-display text-2xl font-black uppercase tracking-tight">
-          Frequently Asked Questions
-        </h2>
-        <dl className="mt-6 space-y-6 border-t border-border pt-6">
-          {seriesFaq.map((faq) => (
-            <div key={faq.question}>
-              <dt className="text-base font-semibold">{faq.question}</dt>
-              <dd className="mt-2 text-base text-foreground/75">
-                {faq.answer}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <Reveal as="section" className="mt-20">
+          <h2 className="text-display-xs">Frequently Asked Questions</h2>
+          <dl className="mt-6 space-y-6 border-t border-border pt-6">
+            {seriesFaq.map((faq) => (
+              <div key={faq.question}>
+                <dt className="text-lg">{faq.question}</dt>
+                <dd className="mt-2 text-base text-foreground/75">
+                  {faq.answer}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </section>
     </>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Speaking, Podcasts & Interviews",
@@ -14,8 +15,8 @@ export default function SpeakingPage() {
     <>
       <Breadcrumbs items={[{ name: "Speaking & Media", path: "/speaking" }]} />
 
-      <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-        <h1 className="font-display text-4xl font-black uppercase tracking-tight sm:text-5xl">
+      <Reveal as="section" className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+        <h1 className="text-display-m sm:text-display-l">
           Speaking, Podcasts &amp; Interviews
         </h1>
         <p className="mt-4 text-base text-foreground/80">
@@ -24,17 +25,17 @@ export default function SpeakingPage() {
           books: business strategy, building companies across three
           continents, and how AI is reshaping how businesses get found.
         </p>
-        <div className="mt-6 border border-dashed border-border p-6 text-base text-foreground/60">
+        <div className="mt-6 border border-dashed border-border p-6 text-base text-grey-1">
           [[PLACEHOLDER — DO NOT PUBLISH]] Past engagements and specific
           topic lists pending from Parham.
         </div>
         <Link
           href="/contact"
-          className="mt-8 inline-block bg-foreground px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-background transition-opacity hover:opacity-85"
+          className="eyebrow mt-8 inline-block bg-foreground px-7 py-3.5 text-background transition-opacity hover:opacity-85"
         >
           Get in Touch
         </Link>
-      </section>
+      </Reveal>
     </>
   );
 }

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Reveal from "@/components/Reveal";
+import StaggerReveal from "@/components/StaggerReveal";
 import { ventures } from "@/lib/data/ventures";
 
 export const metadata: Metadata = {
@@ -16,73 +18,67 @@ export default function ProjectsPage() {
       <Breadcrumbs items={[{ name: "Projects", path: "/projects" }]} />
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <h1 className="font-display text-4xl font-black uppercase tracking-tight sm:text-5xl">
-          Projects
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/80">
-          I look at a business as a product — I think about the exit before I
-          write a business plan, an idea I get into in The Business Strategy
-          Plan. I always have a few things going; some are full companies,
-          some are just projects, and you could call a few of them side
-          hustles.
-        </p>
+        <Reveal>
+          <h1 className="text-display-m sm:text-display-l">Projects</h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/80">
+            I look at a business as a product — I think about the exit before
+            I write a business plan, an idea I get into in The Business
+            Strategy Plan. I always have a few things going; some are full
+            companies, some are just projects, and you could call a few of
+            them side hustles.
+          </p>
+        </Reveal>
 
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2">
+        <StaggerReveal className="mt-10 grid gap-6 sm:grid-cols-2">
           {ventures.map((venture) =>
             venture.url ? (
-              <li key={venture.name}>
-                <div className="flex h-full flex-col border border-border transition-all duration-300 ease-out hover:-translate-y-1 hover:border-foreground hover:shadow-xl">
+              <div key={venture.name} className="flex h-full flex-col border border-border transition-all duration-300 ease-out hover:-translate-y-1 hover:border-foreground hover:shadow-xl">
+                <a
+                  href={venture.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 flex-col"
+                >
+                  {venture.logo && (
+                    <Image
+                      src={venture.logo}
+                      alt={`${venture.name} logo`}
+                      width={1536}
+                      height={1024}
+                      className="h-auto w-full object-cover"
+                    />
+                  )}
+                  <div className="p-6">
+                    {!venture.logo && (
+                      <p className="text-display-xxs">{venture.name}</p>
+                    )}
+                    <p className="mt-1 text-sm text-foreground/60">
+                      {venture.description}
+                    </p>
+                  </div>
+                </a>
+                {venture.secondaryCta && (
                   <a
-                    href={venture.url}
+                    href={venture.secondaryCta.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-1 flex-col"
+                    className="eyebrow mx-6 mb-6 -mt-3 inline-block w-fit underline decoration-border underline-offset-4 hover:decoration-foreground"
                   >
-                    {venture.logo && (
-                      <Image
-                        src={venture.logo}
-                        alt={`${venture.name} logo`}
-                        width={1536}
-                        height={1024}
-                        className="h-auto w-full object-cover"
-                      />
-                    )}
-                    <div className="p-6">
-                      {!venture.logo && (
-                        <p className="font-display text-lg font-black uppercase tracking-tight">
-                          {venture.name}
-                        </p>
-                      )}
-                      <p className="mt-1 text-sm text-foreground/60">
-                        {venture.description}
-                      </p>
-                    </div>
+                    {venture.secondaryCta.label} →
                   </a>
-                  {venture.secondaryCta && (
-                    <a
-                      href={venture.secondaryCta.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mx-6 mb-6 -mt-3 inline-block w-fit text-xs font-semibold uppercase tracking-widest underline decoration-border underline-offset-4 hover:decoration-foreground"
-                    >
-                      {venture.secondaryCta.label} →
-                    </a>
-                  )}
-                </div>
-              </li>
+                )}
+              </div>
             ) : (
-              <li
+              <div
                 key={venture.name}
-                className="border border-dashed border-border p-6 text-foreground/50"
+                className="border border-dashed border-border p-6 text-grey-1"
               >
-                <p className="font-display text-lg font-black uppercase tracking-tight">
-                  {venture.name}
-                </p>
+                <p className="text-display-xxs">{venture.name}</p>
                 <p className="mt-2 text-sm">{venture.description}</p>
-              </li>
+              </div>
             ),
           )}
-        </ul>
+        </StaggerReveal>
       </section>
     </>
   );

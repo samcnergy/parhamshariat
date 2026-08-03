@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
+import StaggerReveal from "@/components/StaggerReveal";
 import { authorBios } from "@/lib/data/author";
 import { books } from "@/lib/data/books";
 
@@ -29,17 +30,17 @@ export default function AboutPage() {
       <Breadcrumbs items={[{ name: "About", path: "/about" }]} />
 
       {/* Hero */}
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-12 sm:px-6 md:grid-cols-[1fr_1.2fr] md:py-20">
+      <section className="mx-auto grid max-w-6xl items-center gap-16 px-4 py-12 sm:px-6 md:grid-cols-[1fr_1.2fr] md:py-24">
         <Image
           src="/images/Parham-kayaking.jpg"
           alt="Parham Shariat paddleboarding near Newport Beach, California"
           width={1536}
           height={2048}
           priority
-          className="h-auto w-full object-cover"
+          className="mx-auto w-full max-w-sm rotate-[-2deg] object-cover shadow-xl"
         />
         <div>
-          <h1 className="font-display text-4xl font-black uppercase leading-[0.95] tracking-tighter sm:text-6xl">
+          <h1 className="text-display-m sm:text-display-l">
             Hi, I&apos;m Parham.
           </h1>
           <p className="mt-6 max-w-lg text-xl leading-relaxed text-foreground/80">
@@ -53,7 +54,10 @@ export default function AboutPage() {
       {/* Pull-quote — the emotional core of the page */}
       <Reveal as="section" className="border-y border-border bg-muted">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-          <blockquote className="border-l-4 border-foreground pl-6 text-2xl font-medium leading-relaxed text-foreground sm:pl-8 sm:text-3xl">
+          <blockquote
+            className="font-serif-quote border-l-4 border-foreground pl-6 text-2xl italic leading-relaxed text-foreground sm:pl-8 sm:text-3xl"
+            style={{ textIndent: "2.5rem" }}
+          >
             I wrote these books because I&apos;ve been lucky enough to learn
             from the best — and unlucky enough to make plenty of mistakes
             along the way. My travels and the businesses I&apos;ve built
@@ -69,8 +73,8 @@ export default function AboutPage() {
       </Reveal>
 
       {/* Books */}
-      <Reveal as="section" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <StaggerReveal className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           {books.map((book) => (
             <Link
               key={book.slug}
@@ -84,25 +88,21 @@ export default function AboutPage() {
                 height={book.coverImage.height}
                 className="h-48 w-auto object-contain shadow-lg transition-transform duration-300 ease-out group-hover:-translate-y-1.5"
               />
-              <p className="text-sm font-semibold leading-snug">
-                {book.title}
-              </p>
+              <p className="text-sm leading-snug">{book.title}</p>
             </Link>
           ))}
-        </div>
-      </Reveal>
+        </StaggerReveal>
+      </section>
 
       {/* The work / Off the clock */}
       <Reveal as="section" className="border-t border-border">
         <div className="mx-auto grid max-w-4xl gap-12 px-4 py-20 sm:grid-cols-2 sm:px-6">
           <div>
-            <h2 className="font-display text-xl font-black uppercase tracking-tight">
-              The Work
-            </h2>
+            <h2 className="text-display-xxs">The Work</h2>
             <ul className="mt-5 space-y-3 border-t border-border pt-5">
               {theWork.map((item) => (
                 <li key={item} className="flex gap-3 text-base text-foreground/80">
-                  <span aria-hidden="true" className="mt-1 text-foreground/40">
+                  <span aria-hidden="true" className="mt-1 text-grey-2">
                     —
                   </span>
                   <span>{item}</span>
@@ -111,13 +111,11 @@ export default function AboutPage() {
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-xl font-black uppercase tracking-tight">
-              Off the Clock
-            </h2>
+            <h2 className="text-display-xxs">Off the Clock</h2>
             <ul className="mt-5 space-y-3 border-t border-border pt-5">
               {offTheClock.map((item) => (
                 <li key={item} className="flex gap-3 text-base text-foreground/80">
-                  <span aria-hidden="true" className="mt-1 text-foreground/40">
+                  <span aria-hidden="true" className="mt-1 text-grey-2">
                     —
                   </span>
                   <span>{item}</span>
@@ -132,7 +130,7 @@ export default function AboutPage() {
       <section className="border-t border-border py-20 text-center">
         <Link
           href="/books"
-          className="inline-block bg-foreground px-8 py-4 text-sm font-bold uppercase tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
+          className="inline-block bg-foreground px-8 py-4 text-sm text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
         >
           See the Books
         </Link>

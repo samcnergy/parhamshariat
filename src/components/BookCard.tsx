@@ -19,15 +19,11 @@ export default function BookCard({ book }: { book: Book }) {
       </div>
       <div className="flex flex-1 flex-col gap-2 p-6">
         {book.seriesPosition && (
-          <p className="text-xs font-semibold uppercase tracking-widest text-foreground/45">
-            Book {book.seriesPosition}
-          </p>
+          <p className="eyebrow text-grey-1">Book {book.seriesPosition}</p>
         )}
-        <h3 className="font-display text-xl font-black uppercase leading-[0.95] tracking-tight">
-          {book.title}
-        </h3>
-        <p className="text-sm text-foreground/60">{book.subtitle}</p>
-        <span className="mt-auto flex items-center gap-2 pt-4 text-xs font-bold uppercase tracking-widest">
+        <h3 className="text-display-xs">{book.title}</h3>
+        <p className="text-sm text-grey-1">{book.subtitle}</p>
+        <span className="eyebrow mt-auto flex items-center gap-2 pt-4">
           Learn More
           <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
             →
