@@ -81,13 +81,15 @@ export default function AboutPage() {
               href={`/books/${book.slug}`}
               className="group flex flex-col items-center gap-4 text-center"
             >
-              <Image
-                src={book.coverImage.src}
-                alt={`Book cover for ${book.title}: ${book.subtitle}`}
-                width={book.coverImage.width}
-                height={book.coverImage.height}
-                className="h-48 w-auto object-contain shadow-lg transition-transform duration-300 ease-out group-hover:-translate-y-1.5"
-              />
+              <div className="flex h-48 w-32 items-center justify-center">
+                <Image
+                  src={book.coverImage.src}
+                  alt={`Book cover for ${book.title}: ${book.subtitle}`}
+                  width={book.coverImage.width}
+                  height={book.coverImage.height}
+                  className="max-h-full max-w-full object-contain shadow-lg transition-transform duration-300 ease-out group-hover:-translate-y-1.5"
+                />
+              </div>
               <p className="text-sm leading-snug">{book.title}</p>
             </Link>
           ))}

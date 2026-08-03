@@ -137,13 +137,15 @@ export default function HomePage() {
                 href={`/books/${book.slug}`}
                 className="group flex flex-col items-center gap-4 border-r border-b border-white/20 p-8 text-center transition-colors hover:bg-white/5"
               >
-                <Image
-                  src={book.coverImage.src}
-                  alt={`Book cover for ${book.title}: ${book.subtitle}`}
-                  width={book.coverImage.width}
-                  height={book.coverImage.height}
-                  className="h-40 w-auto object-contain shadow-lg transition-transform duration-300 group-hover:-translate-y-1.5"
-                />
+                <div className="flex h-40 w-28 items-center justify-center">
+                  <Image
+                    src={book.coverImage.src}
+                    alt={`Book cover for ${book.title}: ${book.subtitle}`}
+                    width={book.coverImage.width}
+                    height={book.coverImage.height}
+                    className="max-h-full max-w-full object-contain shadow-lg transition-transform duration-300 group-hover:-translate-y-1.5"
+                  />
+                </div>
                 <p className="text-xs text-white/70">{book.title}</p>
               </Link>
             ))}

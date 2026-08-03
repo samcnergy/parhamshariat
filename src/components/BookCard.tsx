@@ -8,13 +8,13 @@ export default function BookCard({ book }: { book: Book }) {
       href={`/books/${book.slug}`}
       className="group flex flex-col overflow-hidden border border-border bg-background transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-foreground hover:shadow-xl"
     >
-      <div className="flex items-center justify-center bg-muted p-8">
+      <div className="flex h-[19rem] items-center justify-center bg-muted p-8">
         <Image
           src={book.coverImage.src}
           alt={`Book cover for ${book.title}: ${book.subtitle}`}
           width={book.coverImage.width}
           height={book.coverImage.height}
-          className="h-60 w-auto object-contain shadow-xl transition-transform duration-200 group-hover:-translate-y-1"
+          className="max-h-60 max-w-full object-contain shadow-xl transition-transform duration-200 group-hover:-translate-y-1"
         />
       </div>
       <div className="flex flex-1 flex-col gap-2 p-6">
