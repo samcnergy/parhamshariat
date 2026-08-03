@@ -31,36 +31,39 @@ export default function ProjectsPage() {
           {ventures.map((venture) =>
             venture.url ? (
               <li key={venture.name}>
-                <div className="flex h-full flex-col border border-border p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-foreground hover:shadow-xl">
+                <div className="flex h-full flex-col border border-border transition-all duration-300 ease-out hover:-translate-y-1 hover:border-foreground hover:shadow-xl">
                   <a
                     href={venture.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-1 flex-col"
                   >
-                    {venture.logo ? (
+                    {venture.logo && (
                       <Image
                         src={venture.logo}
                         alt={`${venture.name} logo`}
-                        width={400}
-                        height={200}
-                        className="h-16 w-auto object-contain object-left"
+                        width={1536}
+                        height={1024}
+                        className="h-auto w-full object-cover"
                       />
-                    ) : (
-                      <p className="font-display text-lg font-black uppercase tracking-tight">
-                        {venture.name}
-                      </p>
                     )}
-                    <p className="mt-3 text-sm text-foreground/60">
-                      {venture.description}
-                    </p>
+                    <div className="p-6">
+                      {!venture.logo && (
+                        <p className="font-display text-lg font-black uppercase tracking-tight">
+                          {venture.name}
+                        </p>
+                      )}
+                      <p className="mt-1 text-sm text-foreground/60">
+                        {venture.description}
+                      </p>
+                    </div>
                   </a>
                   {venture.secondaryCta && (
                     <a
                       href={venture.secondaryCta.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-block w-fit text-xs font-semibold uppercase tracking-widest underline decoration-border underline-offset-4 hover:decoration-foreground"
+                      className="mx-6 mb-6 -mt-3 inline-block w-fit text-xs font-semibold uppercase tracking-widest underline decoration-border underline-offset-4 hover:decoration-foreground"
                     >
                       {venture.secondaryCta.label} →
                     </a>

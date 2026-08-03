@@ -12,6 +12,7 @@ export const ventures: Venture[] = [
   {
     name: "Powerful Blueprints",
     url: "https://www.powerfulblueprints.com",
+    logo: "/images/powerful-blueprints-logo.jpg",
     description:
       "An online publication where CEOs, authors, and artists sit for a structured interview, and we write a professional article about their story. I started it because I'd rather read someone's real journey than what they post on social media.",
     secondaryCta: {
