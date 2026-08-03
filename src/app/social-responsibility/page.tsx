@@ -29,22 +29,19 @@ export default function SocialResponsibilityPage() {
             height={620}
             className="h-[42rem] w-auto object-cover"
           />
-          <div className="border border-dashed border-border p-6 text-base leading-relaxed text-foreground/70">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-foreground/40">
-              [[DRAFT — PENDING PARHAM&apos;S REVIEW]]
-            </p>
+          <div className="text-base leading-relaxed text-foreground/80">
             <p>
-              When I was starting out, I didn&apos;t have anyone to tell me
-              what I didn&apos;t know. I made expensive mistakes I could have
-              avoided if someone further along had just sat me down and given
-              me honest advice. That&apos;s stuck with me for twenty-five
-              years.
+              When I was starting out, I had the privilege of having a few
+              great people to tell me what I didn&apos;t know. I also made
+              expensive mistakes I could have avoided if I listened to
+              advice. That&apos;s stuck with me for twenty-five years.
             </p>
             <p className="mt-4">
-              Mentoring young and early-stage entrepreneurs is something I do
-              because I believe in it personally — not because it&apos;s a
-              service I offer through ReTHINK CNERGY. My company works with
-              established firms; this is separate, and it&apos;s mine.
+              Mentoring young and early-stage entrepreneurs is something I
+              like to do because I believe in it personally — not because
+              it&apos;s a service I offer through ReTHINK CNERGY. My company
+              works with established firms; this is separate, and it&apos;s
+              mine.
             </p>
           </div>
         </div>
