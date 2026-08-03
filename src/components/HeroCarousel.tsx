@@ -34,7 +34,7 @@ export default function HeroCarousel({ slides }: { slides: Slide[] }) {
           fill
           priority={i === 0}
           sizes="100vw"
-          className={`object-cover transition-opacity duration-1000 ${
+          className={`object-cover object-top transition-opacity duration-1000 ${
             i === active ? "opacity-100" : "opacity-0"
           }`}
         />

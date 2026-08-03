@@ -38,8 +38,8 @@ export const books: Book[] = [
     buyUrl: "https://a.co/d/00qpaf4W",
     coverImage: {
       src: "/books/business-strategy-plan.jpg",
-      width: 2400,
-      height: 2400,
+      width: 2000,
+      height: 3070,
     },
     accentColor: "#6B7F3A",
     isPlaceholder: false,
@@ -221,8 +221,8 @@ export const books: Book[] = [
     buyUrl: "https://a.co/d/06Ea10X4",
     coverImage: {
       src: "/books/38-letters-rockefeller.jpg",
-      width: 2400,
-      height: 2400,
+      width: 2000,
+      height: 3108,
     },
     accentColor: "#C81E1E",
     isPlaceholder: false,

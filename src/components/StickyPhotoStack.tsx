@@ -85,7 +85,7 @@ export default function StickyPhotoStack({
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="100vw"
             />
           </div>
