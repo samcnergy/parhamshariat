@@ -93,8 +93,8 @@ export const books: Book[] = [
     buyUrl: "https://a.co/d/032T6v07",
     coverImage: {
       src: "/books/digital-real-estate.jpg",
-      width: 807,
-      height: 1235,
+      width: 2148,
+      height: 3300,
     },
     accentColor: "#8E1F9C",
     isPlaceholder: true,
@@ -184,8 +184,8 @@ export const books: Book[] = [
     buyUrl: "https://a.co/d/0dz0a1B2",
     coverImage: {
       src: "/books/six-ways-to-make-a-seven.jpg",
-      width: 674,
-      height: 1234,
+      width: 1886,
+      height: 3300,
     },
     accentColor: "#1A1A1A",
     isPlaceholder: true,
