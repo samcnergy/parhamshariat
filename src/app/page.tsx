@@ -23,16 +23,12 @@ export default function HomePage() {
       {/* Hero — photo + featured book, side by side */}
       <section className="overflow-hidden bg-invert-bg text-invert-fg">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
+          <h1 className="sr-only">Parham Shariat</h1>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-invert-fg/50">
             {siteConfig.tagline}
           </p>
-          <h1 className="mt-4 font-display text-7xl font-black uppercase leading-[0.88] tracking-tighter sm:text-8xl lg:text-9xl">
-            Parham
-            <br />
-            Shariat
-          </h1>
 
-          <div className="mt-12 grid items-start justify-center gap-10 sm:grid-cols-[auto_auto] sm:justify-start">
+          <div className="mt-8 grid items-start justify-center gap-10 sm:grid-cols-[auto_auto] sm:justify-start">
             <Image
               src="/images/parham-headshot-glasses-bw.png"
               alt="Portrait of Parham Shariat"
@@ -41,30 +37,39 @@ export default function HomePage() {
               priority
               className="h-[28rem] w-auto justify-self-center object-cover object-top sm:h-[28rem] sm:justify-self-start"
             />
-            <div className="flex flex-col items-center gap-5 sm:items-start">
-              <Image
-                src={featuredBook.coverImage.src}
-                alt={`Book cover for ${featuredBook.title}: ${featuredBook.subtitle}`}
-                width={featuredBook.coverImage.width}
-                height={featuredBook.coverImage.height}
-                className="h-[28rem] w-auto object-contain object-top shadow-2xl transition-transform duration-500 ease-out hover:-translate-y-2"
-              />
-              <div className="text-center sm:text-left">
-                <p className="font-display text-xl font-black uppercase tracking-tight">
-                  {featuredBook.title}
-                </p>
-                <p className="mt-1 text-sm text-invert-fg/60">
-                  {featuredBook.subtitle}
-                </p>
+            <div className="flex flex-col items-center gap-10 sm:items-start">
+              <p className="max-w-md text-center font-display text-5xl font-black uppercase leading-[0.9] tracking-tight sm:text-left sm:text-6xl">
+                Empower
+                <br />
+                The Next
+                <br />
+                Generation
+              </p>
+              <div className="flex flex-col items-center gap-5 sm:items-start">
+                <Image
+                  src={featuredBook.coverImage.src}
+                  alt={`Book cover for ${featuredBook.title}: ${featuredBook.subtitle}`}
+                  width={featuredBook.coverImage.width}
+                  height={featuredBook.coverImage.height}
+                  className="h-56 w-auto object-contain object-top shadow-2xl transition-transform duration-500 ease-out hover:-translate-y-2"
+                />
+                <div className="text-center sm:text-left">
+                  <p className="font-display text-xl font-black uppercase tracking-tight">
+                    {featuredBook.title}
+                  </p>
+                  <p className="mt-1 text-sm text-invert-fg/60">
+                    {featuredBook.subtitle}
+                  </p>
+                </div>
+                <a
+                  href={featuredBook.buyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-invert-fg px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-invert-bg transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
+                >
+                  Buy the Book
+                </a>
               </div>
-              <a
-                href={featuredBook.buyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-invert-fg px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-invert-bg transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85 active:translate-y-0"
-              >
-                Buy the Book
-              </a>
             </div>
           </div>
         </div>

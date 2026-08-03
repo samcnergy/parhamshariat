@@ -3,7 +3,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { authorBios, credentials } from "@/lib/data/author";
-import { ventures } from "@/lib/data/ventures";
 
 export const metadata: Metadata = {
   title: "About Parham Shariat",
@@ -25,10 +24,10 @@ export default function AboutPage() {
         <Breadcrumbs items={[{ name: "About", path: "/about" }]} variant="dark" />
         <div className="mx-auto grid max-w-6xl items-end gap-10 px-4 pb-14 pt-6 sm:px-6 md:grid-cols-[1fr_1.4fr]">
           <Image
-            src="/images/parham-headshot-glasses-bw.png"
+            src="/images/parham-headshot-primary.jpg"
             alt="Portrait of Parham Shariat"
-            width={500}
-            height={750}
+            width={1600}
+            height={2400}
             className="h-72 w-auto object-cover sm:h-96"
           />
           <div>
@@ -60,43 +59,14 @@ export default function AboutPage() {
           ))}
         </ul>
 
-        <h2 className="mt-16 font-display text-2xl font-black uppercase tracking-tight">
-          Ventures
-        </h2>
-        <p className="mt-4 text-base text-foreground/70">
-          Companies and projects Parham has built under ReTHINK CNERGY.
+        <p className="mt-8">
+          <Link
+            href="/projects"
+            className="text-sm font-semibold underline decoration-border underline-offset-4 hover:decoration-foreground"
+          >
+            See the companies and projects Parham has built →
+          </Link>
         </p>
-        <ul className="mt-5 grid gap-4 border-t border-border pt-5 sm:grid-cols-2">
-          {ventures.map((venture) =>
-            venture.url ? (
-              <li key={venture.name}>
-                <a
-                  href={venture.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block border border-border p-4 transition-colors hover:border-foreground"
-                >
-                  <p className="font-display text-base font-black uppercase tracking-tight">
-                    {venture.name}
-                  </p>
-                  <p className="mt-1 text-sm text-foreground/60">
-                    {venture.description}
-                  </p>
-                </a>
-              </li>
-            ) : (
-              <li
-                key={venture.name}
-                className="border border-dashed border-border p-4 text-foreground/50"
-              >
-                <p className="font-display text-base font-black uppercase tracking-tight">
-                  {venture.name}
-                </p>
-                <p className="mt-1 text-sm">{venture.description}</p>
-              </li>
-            ),
-          )}
-        </ul>
 
         <h2 className="mt-16 font-display text-2xl font-black uppercase tracking-tight">
           Credentials

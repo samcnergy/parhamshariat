@@ -29,21 +29,23 @@ export const siteConfig = {
 export const primaryNav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Get Involved", href: "/social-responsibility" },
   { label: "Books", href: "/books" },
-  { label: "Speaking", href: "/speaking" },
-  { label: "Social Responsibility", href: "/social-responsibility" },
-  { label: "Media", href: "/media" },
+  { label: "Events", href: "/events" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export const footerNav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
   { label: "Books", href: "/books" },
   { label: "Speaking & Media", href: "/speaking" },
+  { label: "Events", href: "/events" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Insights", href: "/insights" },
-  { label: "Social Responsibility", href: "/social-responsibility" },
+  { label: "Get Involved", href: "/social-responsibility" },
   { label: "Media", href: "/media" },
   { label: "Contact", href: "/contact" },
 ] as const;
