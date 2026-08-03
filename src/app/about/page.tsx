@@ -2,20 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { authorBios, credentials } from "@/lib/data/author";
+import { authorBios } from "@/lib/data/author";
 
 export const metadata: Metadata = {
   title: "About Parham Shariat",
   description: authorBios.medium.split("\n\n")[0],
   alternates: { canonical: "/about" },
 };
-
-const timeline = [
-  "Held C-level and senior leadership positions at multinational firms, leading operations from Dubai to South Carolina.",
-  "Structured investment vehicles, including a $56M investment prospectus for hotel redevelopment.",
-  "Negotiated international franchise agreements, including securing exclusive franchise rights for Porsche Design in Mongolia.",
-  "Launched digital platforms serving thousands of users and led U.S. market entry, scaling supply chain operations by 50%.",
-];
 
 export default function AboutPage() {
   return (
@@ -44,43 +37,6 @@ export default function AboutPage() {
         <p className="whitespace-pre-line text-lg leading-relaxed text-foreground/80">
           {authorBios.medium}
         </p>
-
-        <h2 className="mt-16 font-display text-2xl font-black uppercase tracking-tight">
-          Career Highlights
-        </h2>
-        <ul className="mt-5 space-y-3 border-t border-border pt-5">
-          {timeline.map((item) => (
-            <li key={item} className="flex gap-3 text-base text-foreground/80">
-              <span aria-hidden="true" className="mt-1 text-foreground/40">
-                —
-              </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-
-        <p className="mt-8">
-          <Link
-            href="/projects"
-            className="text-sm font-semibold underline decoration-border underline-offset-4 hover:decoration-foreground"
-          >
-            See the companies and projects Parham has built →
-          </Link>
-        </p>
-
-        <h2 className="mt-16 font-display text-2xl font-black uppercase tracking-tight">
-          Credentials
-        </h2>
-        <ul className="mt-5 flex flex-wrap gap-3">
-          {credentials.map((credential) => (
-            <li
-              key={credential}
-              className="border border-border px-4 py-1.5 text-sm font-medium"
-            >
-              {credential}
-            </li>
-          ))}
-        </ul>
 
         <div className="mt-16 grid gap-6 border border-border bg-muted p-8 sm:grid-cols-[1fr_auto] sm:items-center">
           <p className="text-base text-foreground/80">
