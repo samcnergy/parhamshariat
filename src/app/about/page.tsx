@@ -29,14 +29,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero — full-bleed photo, text overlay */}
-      <section className="relative h-[85vh] min-h-[34rem] overflow-hidden bg-black text-white">
+      <section className="relative h-screen min-h-[42rem] overflow-hidden bg-black text-white">
         <Image
           src="/images/Parham-kayaking.jpg"
           alt="Parham Shariat paddleboarding near Newport Beach, California"
           fill
           priority
           sizes="100vw"
-          style={{ objectPosition: "50% 12%" }}
+          style={{ objectPosition: "50% 22%" }}
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
