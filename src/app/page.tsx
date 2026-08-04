@@ -40,9 +40,9 @@ export default function HomePage() {
         <HeroCarousel slides={heroSlides} />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24">
           <h1 className="font-display text-display-m uppercase leading-[0.85] sm:text-display-super">
-            25 Years of Experience.
+            25 Years of Experience in
             <br />
-            3 Continents.
+            3 Continents &amp;
             <br />
             5 Books.
           </h1>
