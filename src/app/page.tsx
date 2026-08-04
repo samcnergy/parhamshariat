@@ -40,7 +40,7 @@ export default function HomePage() {
       <section className="relative flex h-screen min-h-[36rem] items-end overflow-hidden bg-black text-white">
         <HeroCarousel slides={heroSlides} />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24">
-          <h1 className="font-display text-display-xl uppercase leading-[0.85] sm:text-display-super">
+          <h1 className="font-display text-display-m uppercase leading-[0.85] sm:text-display-super">
             25 Years of Experience.
             <br />
             3 Continents.
