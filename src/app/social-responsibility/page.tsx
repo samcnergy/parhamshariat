@@ -48,23 +48,21 @@ export default function SocialResponsibilityPage() {
               mine.
             </p>
 
-            <div className="mt-6 space-y-2">
-              <p>
-                <a
-                  href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship — I need help")}`}
-                  className="underline decoration-border underline-offset-4 hover:decoration-foreground"
-                >
-                  Tell me what you need help with →
-                </a>
-              </p>
-              <p>
-                <a
-                  href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship — I can help a startup")}`}
-                  className="underline decoration-border underline-offset-4 hover:decoration-foreground"
-                >
-                  Tell me how you can help a startup →
-                </a>
-              </p>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+              <a
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship — I need help")}`}
+                className="inline-flex items-center gap-1.5 border-b border-black pb-1 text-sm transition-opacity hover:opacity-60"
+              >
+                Tell me what you need help with
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship — I can help a startup")}`}
+                className="inline-flex items-center gap-1.5 border-b border-black pb-1 text-sm transition-opacity hover:opacity-60"
+              >
+                Tell me how you can help a startup
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
         </Reveal>
