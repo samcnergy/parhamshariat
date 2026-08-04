@@ -8,7 +8,6 @@ import HeroCarousel from "@/components/HeroCarousel";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import StaggerReveal from "@/components/StaggerReveal";
-import StickyPhotoStack from "@/components/StickyPhotoStack";
 import ImageWipeReveal from "@/components/ImageWipeReveal";
 import SpinningMark from "@/components/SpinningMark";
 
@@ -41,9 +40,11 @@ export default function HomePage() {
         <HeroCarousel slides={heroSlides} />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24">
           <h1 className="font-display text-display-xl uppercase leading-[0.85] sm:text-display-super">
-            Parham
+            25 Years of Experience.
             <br />
-            Shariat
+            3 Continents.
+            <br />
+            5 Books.
           </h1>
           <p className="eyebrow mt-6 text-white/80">{siteConfig.tagline}</p>
         </div>
@@ -85,22 +86,6 @@ export default function HomePage() {
           <p className="eyebrow mx-auto mt-2 max-w-md text-current/70">{stat.caption}</p>
         </Reveal>
       ))}
-
-      {/* Founding story — sticky-pinned headline over scrolling photos */}
-      <StickyPhotoStack
-        images={[
-          { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor", focus: "50% 15%" },
-          { src: "/images/parham shariat 6.JPG", alt: "Parham Shariat overlooking the caldera in Santorini", focus: "50% 60%" },
-          { src: "/images/parham-headshot-glasses-2.png", alt: "Portrait of Parham Shariat", focus: "50% 20%" },
-        ]}
-        headline={
-          <p className="font-display text-display-m uppercase leading-[0.85] sm:text-display-xl">
-            25 Years.
-            <br />3 Continents.
-            <br />5 Books.
-          </p>
-        }
-      />
 
       {/* Books — black bg, large covers */}
       <section className="bg-black py-24 text-white">
