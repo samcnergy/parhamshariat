@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Reveal from "@/components/Reveal";
+import { siteConfig } from "@/lib/data/site";
 
 export const metadata: Metadata = {
   title: "Social Responsibility",
@@ -46,6 +47,25 @@ export default function SocialResponsibilityPage() {
               works with established firms; this is separate, and it&apos;s
               mine.
             </p>
+
+            <div className="mt-6 space-y-2">
+              <p>
+                <a
+                  href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship — I need help")}`}
+                  className="underline decoration-border underline-offset-4 hover:decoration-foreground"
+                >
+                  Tell me what you need help with →
+                </a>
+              </p>
+              <p>
+                <a
+                  href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship — I can help a startup")}`}
+                  className="underline decoration-border underline-offset-4 hover:decoration-foreground"
+                >
+                  Tell me how you can help a startup →
+                </a>
+              </p>
+            </div>
           </div>
         </Reveal>
       </section>
