@@ -24,9 +24,10 @@ const heroSlides = [
 ];
 
 const stats = [
-  { number: "30", caption: "Years — several countries, C-level roles in multinational companies" },
+  { number: "25+", caption: "Years — several countries, C-level roles in multinational companies" },
   { number: "5", caption: "Books published" },
-  { number: "2", caption: "Companies founded — ReTHINK CNERGY and Powerful Blueprints" },
+  { number: "11", caption: "Companies founded — including ReTHINK CNERGY and Powerful Blueprints" },
+  { number: "25+", caption: "Cities visited around the world" },
 ];
 
 export default function HomePage() {
