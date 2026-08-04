@@ -45,7 +45,7 @@ export default function Header() {
                 {item.label}
               </Link>
               {i < primaryNav.length - 1 && (
-                <span aria-hidden="true" className="mr-2 text-white/50">
+                <span aria-hidden="true" className="mr-4 text-white/50">
                   ,
                 </span>
               )}
