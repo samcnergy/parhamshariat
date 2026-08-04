@@ -97,12 +97,19 @@ export const books: Book[] = [
       height: 3300,
     },
     accentColor: "#8E1F9C",
-    isPlaceholder: true,
-    shortDescription: "[[PLACEHOLDER — DO NOT PUBLISH]]",
-    mediumDescription: "[[PLACEHOLDER — DO NOT PUBLISH]]",
+    isPlaceholder: false,
+    shortDescription:
+      "If people had to pay to see your posts, would they? Digital Real Estate shows you how to stop filling someone else's platform and start building digital assets — online property that appreciates instead of disappearing by morning.",
+    mediumDescription:
+      "Ask yourself one question and answer it honestly. If people had to pay to see your posts on social media, would they pay?\n\nIf the answer is no, your digital assets are worthless. You are not building a digital real estate portfolio. You are filling someone else's platform with work that disappears by morning.\n\nMost people never have a strategy for building a digital footprint worth owning. They pour hours into posting stuff that has no value beyond three seconds. It gets a glance, maybe a like, and then it's gone. Years of effort, nothing to show for it.\n\nWhen you want to build a house, you first hire an architect. Once the vision is on paper, a contractor builds it. Digital Real Estate works the same way — you have to design what you're trying to build, then execute it, and do it consistently.\n\nAlmost nobody is teaching this. There's endless advice on going viral and almost none on owning ground. This book is the part that's missing.",
     whoItsFor:
-      "The second book in The Business Strategy Series — on why owning your footprint on the internet became essential as AI reshaped how businesses get found. [[Full description PLACEHOLDER — DO NOT PUBLISH]]",
-    keyTakeaways: [],
+      "Anyone with real expertise and nothing online to show for it. If you're sitting on undeveloped land — pouring hours into content that disappears by morning instead of building something you actually own — this book hands you the blueprint.",
+    keyTakeaways: [
+      "Why a digital footprint built the right way becomes an asset that lasts — not content that disappears by morning.",
+      "How to tell prime online property from an empty lot.",
+      "How to build digital assets that AI search engines find, trust, and recommend.",
+      "The framework for turning content into property that appreciates instead of disappearing.",
+    ],
     faq: [
       {
         question: "Who wrote Digital Real Estate: How to Own More Space on the Internet?",
