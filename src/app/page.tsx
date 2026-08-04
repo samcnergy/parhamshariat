@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 };
 
 const heroSlides = [
-  { src: "/images/parham-headshot-glasses-2.png", alt: "Portrait of Parham Shariat" },
-  { src: "/images/Parham-kayaking.jpg", alt: "Parham Shariat paddleboarding near Newport Beach" },
-  { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor in Newport Beach" },
+  { src: "/images/parham-headshot-glasses-2.png", alt: "Portrait of Parham Shariat", focus: "50% 20%" },
+  { src: "/images/parham shariat 6.JPG", alt: "Parham Shariat overlooking the caldera in Santorini", focus: "50% 60%" },
+  { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor in Newport Beach", focus: "50% 15%" },
 ];
 
 const stats = [
@@ -89,9 +89,9 @@ export default function HomePage() {
       {/* Founding story — sticky-pinned headline over scrolling photos */}
       <StickyPhotoStack
         images={[
-          { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor" },
-          { src: "/images/Parham-kayaking.jpg", alt: "Parham Shariat paddleboarding" },
-          { src: "/images/parham-headshot-glasses-2.png", alt: "Portrait of Parham Shariat" },
+          { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor", focus: "50% 15%" },
+          { src: "/images/parham shariat 6.JPG", alt: "Parham Shariat overlooking the caldera in Santorini", focus: "50% 60%" },
+          { src: "/images/parham-headshot-glasses-2.png", alt: "Portrait of Parham Shariat", focus: "50% 20%" },
         ]}
         headline={
           <p className="font-display text-display-m uppercase leading-[0.85] sm:text-display-xl">

@@ -6,6 +6,7 @@ import Image from "next/image";
 type StackImage = {
   src: string;
   alt: string;
+  focus?: string;
 };
 
 /**
@@ -85,7 +86,8 @@ export default function StickyPhotoStack({
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover object-top"
+              className="object-cover"
+              style={{ objectPosition: image.focus ?? "50% 0%" }}
               sizes="100vw"
             />
           </div>
