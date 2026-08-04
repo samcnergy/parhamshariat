@@ -35,8 +35,8 @@ export default function Header() {
           {siteConfig.name}
         </Link>
 
-        <ul className="hidden items-center md:flex">
-          {primaryNav.map((item, i) => (
+        <ul className="hidden items-center gap-8 md:flex">
+          {primaryNav.map((item) => (
             <li key={item.href} className="eyebrow">
               <Link
                 href={item.href}
@@ -44,11 +44,6 @@ export default function Header() {
               >
                 {item.label}
               </Link>
-              {i < primaryNav.length - 1 && (
-                <span aria-hidden="true" className="mr-4 text-white/50">
-                  ,
-                </span>
-              )}
             </li>
           ))}
         </ul>
