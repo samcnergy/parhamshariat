@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-type Slide = { src: string; alt: string; focus?: string };
+type Slide = { src: string; alt: string; focus?: string; zoom?: number };
 
 /**
  * Full-bleed crossfading photo carousel for the hero. The first image is
@@ -34,7 +34,11 @@ export default function HeroCarousel({ slides }: { slides: Slide[] }) {
           fill
           priority={i === 0}
           sizes="100vw"
-          style={{ objectPosition: slide.focus ?? "50% 0%" }}
+          style={{
+            objectPosition: slide.focus ?? "50% 0%",
+            transform: slide.zoom ? `scale(${slide.zoom})` : undefined,
+            transformOrigin: slide.focus ?? "50% 0%",
+          }}
           className={`object-cover transition-opacity duration-1000 ${
             i === active ? "opacity-100" : "opacity-0"
           }`}

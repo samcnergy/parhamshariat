@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BookCard from "@/components/BookCard";
@@ -21,13 +22,22 @@ export default function BooksPage() {
 
       <section className="bg-black text-white">
         <Breadcrumbs items={[{ name: "Books", path: "/books" }]} variant="dark" />
-        <div className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6">
-          <h1 className="text-display-l sm:text-display-xl">Books</h1>
-          <p className="mt-6 max-w-2xl text-lg text-white/70">
-            Field notes from 25+ years building companies — {seriesName}{" "}
-            covers strategy, digital presence, and AI-era visibility, plus
-            two further titles for a younger audience and on leadership.
-          </p>
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-6 sm:px-6 md:grid-cols-[1.4fr_auto]">
+          <div>
+            <h1 className="text-display-l sm:text-display-xl">Books</h1>
+            <p className="mt-6 max-w-2xl text-lg text-white/70">
+              Field notes from 25+ years building companies — {seriesName}{" "}
+              covers strategy, digital presence, and AI-era visibility, plus
+              two further titles for a younger audience and on leadership.
+            </p>
+          </div>
+          <Image
+            src="/images/parham-headshot-glasses.jpg"
+            alt="Parham Shariat"
+            width={310}
+            height={310}
+            className="mx-auto h-48 w-48 rounded-full object-cover sm:h-64 sm:w-64"
+          />
         </div>
       </section>
 

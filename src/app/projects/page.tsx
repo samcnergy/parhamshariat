@@ -21,11 +21,15 @@ export default function ProjectsPage() {
         <Reveal>
           <h1 className="text-display-m sm:text-display-l">Projects</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/80">
-            I look at a business as a product — I think about the exit before
-            I write a business plan, an idea I get into in The Business
-            Strategy Plan. I always have a few things going; some are full
-            companies, some are just projects, and you could call a few of
-            them side hustles.
+            I look at a business as a product. Before I ever write a business
+            plan, I&apos;m already thinking about the exit — it&apos;s a
+            principle I lay out in The Business Strategy Plan.
+          </p>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-foreground/80">
+            I always have a few things going. Some are full companies. Some
+            are just projects. A couple, if I&apos;m honest, are side
+            hustles. Powerful Blueprints is a project — and building that
+            community has been one of the most fun things I&apos;ve done.
           </p>
         </Reveal>
 

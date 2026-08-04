@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const heroSlides = [
   { src: "/images/parham-headshot-glasses-2.png", alt: "Portrait of Parham Shariat", focus: "50% 20%" },
   { src: "/images/parham shariat 6.JPG", alt: "Parham Shariat overlooking the caldera in Santorini", focus: "50% 60%" },
-  { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor in Newport Beach", focus: "50% 15%" },
+  { src: "/images/parham-headshot-newport.jpg", alt: "Parham Shariat at the harbor in Newport Beach", focus: "35% 18%", zoom: 1.5 },
 ];
 
 const stats = [
