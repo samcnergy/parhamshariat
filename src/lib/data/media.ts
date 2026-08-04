@@ -3,6 +3,7 @@ export type PressFeature = {
   title: string;
   description: string;
   url: string;
+  logo?: { src: string; width: number; height: number };
 };
 
 export const pressFeatures: PressFeature[] = [
@@ -12,6 +13,7 @@ export const pressFeatures: PressFeature[] = [
     description:
       "A profile on Parham's path into business strategy and building companies across multiple continents.",
     url: "https://canvasrebel.com/meet-parham-shariat/",
+    logo: { src: "/images/canvasrebel.png", width: 674, height: 170 },
   },
   {
     outlet: "VoyageLA",
@@ -19,13 +21,15 @@ export const pressFeatures: PressFeature[] = [
     description:
       "An interview covering Parham's career, entrepreneurial ventures, and approach to strategy.",
     url: "https://voyagela.com/interview/hidden-gems-meet-parham-shariat-of-rethink-cnergy-llc/",
+    logo: { src: "/images/voyagela.png", width: 2108, height: 656 },
   },
   {
     outlet: "Bold Journey",
-    title: "Parham Shariatzadeh on Rebuilding Business Strategy for the AI Age",
+    title: "Meet Parham Shariat",
     description:
-      "A feature on Parham's work developing the Generative Engine Optimization methodology.",
-    url: "https://boldjourney.com/parham-shariatzadeh-on-rebuilding-business-strategy-for-the-ai-age/",
+      "A profile on Parham's career, entrepreneurial ventures, and approach to strategy.",
+    url: "https://boldjourney.com/meet-parham-shariat/",
+    logo: { src: "/images/boldjourney.png", width: 544, height: 272 },
   },
   {
     outlet: "Office Optima Pro",

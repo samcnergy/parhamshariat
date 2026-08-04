@@ -174,13 +174,27 @@ export default function HomePage() {
           <p className="eyebrow px-2 py-6 text-grey-1">As Seen In</p>
           <div className="grid grid-cols-2 border-t border-l border-grey-4 sm:grid-cols-4">
             {pressFeatures.map((feature) => (
-              <Link
+              <a
                 key={feature.outlet}
-                href="/media"
-                className="flex items-center justify-center border-r border-b border-grey-4 px-6 py-12 font-display text-display-xxs uppercase text-grey-2 transition-colors hover:text-black sm:text-display-xs"
+                href={feature.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center border-r border-b border-grey-4 px-6 py-12 grayscale transition-all duration-200 hover:grayscale-0"
               >
-                {feature.outlet}
-              </Link>
+                {feature.logo ? (
+                  <Image
+                    src={feature.logo.src}
+                    alt={feature.outlet}
+                    width={feature.logo.width}
+                    height={feature.logo.height}
+                    className="h-8 w-auto object-contain sm:h-10"
+                  />
+                ) : (
+                  <span className="font-display text-display-xxs uppercase text-grey-2 transition-colors hover:text-black sm:text-display-xs">
+                    {feature.outlet}
+                  </span>
+                )}
+              </a>
             ))}
           </div>
         </div>

@@ -36,7 +36,8 @@ export default function AboutPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-top"
+          style={{ objectPosition: "50% 12%" }}
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex h-full flex-col justify-between">
@@ -115,6 +116,11 @@ export default function AboutPage() {
             </p>
             <p className="mt-4">
               Parham lives in Southern California with his family.
+            </p>
+            <p className="mt-6 border-l-4 border-foreground pl-4 text-lg italic leading-relaxed text-foreground/70">
+              &ldquo;Leveraging my experience and cultural knowledge to create
+              impactful solutions and forge strong, sustainable business
+              pathways for startups and global brands.&rdquo;
             </p>
           </div>
         </div>
