@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import StaggerReveal from "@/components/StaggerReveal";
 import { authorBios } from "@/lib/data/author";
@@ -27,29 +28,33 @@ const offTheClock = [
 export default function AboutPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: "About", path: "/about" }]} />
-
-      {/* Hero */}
-      <section className="mx-auto grid max-w-6xl items-center gap-16 px-4 py-12 sm:px-6 md:grid-cols-[1fr_1.2fr] md:py-24">
+      {/* Hero — full-bleed photo, text overlay */}
+      <section className="relative h-[85vh] min-h-[34rem] overflow-hidden bg-black text-white">
         <Image
           src="/images/Parham-kayaking.jpg"
           alt="Parham Shariat paddleboarding near Newport Beach, California"
-          width={1536}
-          height={2048}
+          fill
           priority
-          className="mx-auto w-full max-w-sm rotate-[-2deg] object-cover shadow-xl"
+          sizes="100vw"
+          className="object-cover object-top"
         />
-        <div>
-          <h1 className="text-display-m sm:text-display-l">
-            Hi, I&apos;m Parham.
-          </h1>
-          <p className="mt-6 max-w-lg text-xl leading-relaxed text-foreground/80">
-            Strategist, author, kayaker. I spent three decades learning what
-            works in business — and what doesn&apos;t — so you don&apos;t
-            have to learn it the hard way.
-          </p>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex h-full flex-col justify-between">
+          <Breadcrumbs items={[{ name: "About", path: "/about" }]} variant="dark" />
+          <div className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 sm:pb-24">
+            <h1 className="text-display-m sm:text-display-l">
+              Hi, I&apos;m Parham.
+            </h1>
+            <p className="mt-6 max-w-lg text-xl leading-relaxed text-white/80">
+              Strategist, author, kayaker. I spent three decades learning
+              what works in business — and what doesn&apos;t — so you
+              don&apos;t have to learn it the hard way.
+            </p>
+          </div>
         </div>
       </section>
+
+      <Marquee text="Strategist, Author, Kayaker" />
 
       {/* Pull-quote — the emotional core of the page */}
       <Reveal as="section" className="border-y border-border bg-muted">
@@ -84,10 +89,10 @@ export default function AboutPage() {
               className="absolute left-0 top-4 w-2/3 rotate-[-4deg] object-cover shadow-xl"
             />
             <Image
-              src="/images/Parham and shirin (wife) 2023.jpg"
+              src="/images/Parham and Shirin 2024.jpeg"
               alt="Parham Shariat with his wife, Shirin Salamat"
-              width={1200}
-              height={1600}
+              width={2316}
+              height={3088}
               className="absolute right-0 top-0 w-2/5 rotate-[3deg] object-cover shadow-xl"
             />
           </div>
