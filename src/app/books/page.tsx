@@ -26,7 +26,7 @@ export default function BooksPage() {
           <div>
             <h1 className="text-display-l sm:text-display-xl">Books</h1>
             <p className="mt-6 max-w-2xl text-lg text-white/70">
-              Field notes from 25+ years building companies — {seriesName}{" "}
+              Field notes from 25+ years building companies: {seriesName}{" "}
               covers strategy, digital presence, and AI-era visibility, plus
               two further titles for a younger audience and on leadership.
             </p>

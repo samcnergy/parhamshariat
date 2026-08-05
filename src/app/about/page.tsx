@@ -48,7 +48,7 @@ export default function AboutPage() {
             </h1>
             <p className="mt-6 max-w-lg text-xl leading-relaxed text-white/80">
               Strategist, author, kayaker. I spent three decades learning
-              what works in business — and what doesn&apos;t — so you
+              what works in business, and what doesn&apos;t, so you
               don&apos;t have to learn it the hard way.
             </p>
           </div>
@@ -65,14 +65,14 @@ export default function AboutPage() {
             style={{ textIndent: "2.5rem" }}
           >
             I wrote these books because I&apos;ve been lucky enough to learn
-            from the best — and unlucky enough to make plenty of mistakes
+            from the best, and unlucky enough to make plenty of mistakes
             along the way. My travels and the businesses I&apos;ve built
             taught me how to pivot quickly when something goes wrong, before
             it turns into a disaster. That&apos;s where my strategic
-            thinking comes from — not a textbook, but years of being in the
+            thinking comes from: not a textbook, but years of being in the
             room when things worked and when they didn&apos;t. My hope is
             that young entrepreneurs can pick up what took me thirty years
-            to learn, and use it to build something of their own — a little
+            to learn, and use it to build something of their own, a little
             faster, and with a few less bruises than I got along the way.
           </blockquote>
         </div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
               {theWork.map((item) => (
                 <li key={item} className="flex gap-3 text-base text-foreground/80">
                   <span aria-hidden="true" className="mt-1 text-grey-2">
-                    —
+                    •
                   </span>
                   <span>{item}</span>
                 </li>
@@ -172,7 +172,7 @@ export default function AboutPage() {
               {offTheClock.map((item) => (
                 <li key={item} className="flex gap-3 text-base text-foreground/80">
                   <span aria-hidden="true" className="mt-1 text-grey-2">
-                    —
+                    •
                   </span>
                   <span>{item}</span>
                 </li>

@@ -42,7 +42,7 @@ export default function SocialResponsibilityPage() {
             </p>
             <p className="mt-4">
               Mentoring young and early-stage entrepreneurs is something I
-              like to do because I believe in it personally — not because
+              like to do because I believe in it personally, not because
               it&apos;s a service I offer through ReTHINK CNERGY. My company
               works with established firms; this is separate, and it&apos;s
               mine.
@@ -50,14 +50,14 @@ export default function SocialResponsibilityPage() {
 
             <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
               <a
-                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship — I need help")}`}
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship: I need help")}`}
                 className="inline-flex items-center gap-1.5 border-b border-black pb-1 text-sm transition-opacity hover:opacity-60"
               >
                 Tell me what you need help with
                 <span aria-hidden="true">↗</span>
               </a>
               <a
-                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship — I can help a startup")}`}
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Mentorship: I can help a startup")}`}
                 className="inline-flex items-center gap-1.5 border-b border-black pb-1 text-sm transition-opacity hover:opacity-60"
               >
                 Tell me how you can help a startup

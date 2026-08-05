@@ -12,7 +12,7 @@ import ImageWipeReveal from "@/components/ImageWipeReveal";
 import SpinningMark from "@/components/SpinningMark";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — ${siteConfig.tagline}`,
+  title: `${siteConfig.name} | ${siteConfig.tagline}`,
   description: siteConfig.positioning,
   alternates: { canonical: "/" },
 };
@@ -24,9 +24,9 @@ const heroSlides = [
 ];
 
 const stats = [
-  { number: "25+", caption: "Years — several countries, C-level roles in multinational companies" },
+  { number: "25+", caption: "Years, several countries, C-level roles in multinational companies" },
   { number: "5", caption: "Books published" },
-  { number: "11", caption: "Companies founded — including ReTHINK CNERGY and Powerful Blueprints" },
+  { number: "11", caption: "Companies founded, including ReTHINK CNERGY and Powerful Blueprints" },
 ];
 
 export default function HomePage() {
@@ -62,11 +62,11 @@ export default function HomePage() {
           className="font-serif-quote mt-6 text-display-xs italic leading-tight sm:text-display-s"
           style={{ textIndent: "3rem" }}
         >
-          I&apos;ve been lucky enough to learn from the best — and unlucky
+          I&apos;ve been lucky enough to learn from the best, and unlucky
           enough to make plenty of mistakes along the way. My travels and the
           businesses I&apos;ve built taught me how to pivot quickly when
           something goes wrong, before it turns into a disaster. That&apos;s
-          where my strategic thinking comes from — not a textbook, but years
+          where my strategic thinking comes from: not a textbook, but years
           of being in the room when things worked and when they didn&apos;t.
         </blockquote>
       </Reveal>
@@ -153,7 +153,7 @@ export default function HomePage() {
             <p className="eyebrow text-grey-1">Off the Clock</p>
             <p className="mt-4 text-lg leading-relaxed">
               Outside of work, I enjoy learning, writing, and getting out on
-              the water — paddleboarding or kayaking whenever I can. I live
+              the water, paddleboarding or kayaking whenever I can. I live
               in Southern California with my wife, Shirin Salamat, an
               attorney and my biggest supporter.
             </p>

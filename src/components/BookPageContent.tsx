@@ -76,7 +76,7 @@ export default function BookPageContent({ book }: { book: Book }) {
                 {book.keyTakeaways.map((takeaway) => (
                   <li key={takeaway} className="flex gap-3 text-base text-foreground/80">
                     <span aria-hidden="true" className="mt-1 text-grey-2">
-                      —
+                      •
                     </span>
                     <span>{takeaway}</span>
                   </li>

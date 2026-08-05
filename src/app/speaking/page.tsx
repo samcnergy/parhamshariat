@@ -21,12 +21,12 @@ export default function SpeakingPage() {
         </h1>
         <p className="mt-4 text-base text-foreground/80">
           Parham is open to collaborating on speaking engagements, podcast
-          appearances, and interviews — drawing on the ideas behind his
+          appearances, and interviews, drawing on the ideas behind his
           books: business strategy, building companies across three
           continents, and how AI is reshaping how businesses get found.
         </p>
         <div className="mt-6 border border-dashed border-border p-6 text-base text-grey-1">
-          [[PLACEHOLDER — DO NOT PUBLISH]] Past engagements and specific
+          [[PLACEHOLDER: DO NOT PUBLISH]] Past engagements and specific
           topic lists pending from Parham.
         </div>
         <Link

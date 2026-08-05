@@ -23,8 +23,8 @@ export default function MediaPage() {
           <h1 className="text-display-m sm:text-display-l">Media &amp; Press</h1>
           <p className="mt-4 max-w-2xl text-base text-foreground/70">
             Parham Shariat in the press. Note: two of these features credit
-            the byline &quot;Parham Shariatzadeh&quot; — the same person, an
-            earlier legal-name usage — and are linked here as originally
+            the byline &quot;Parham Shariatzadeh&quot; (the same person, an
+            earlier legal-name usage) and are linked here as originally
             published.
           </p>
         </Reveal>
@@ -84,10 +84,10 @@ export default function MediaPage() {
           </div>
           <div className="mt-6 grid gap-px border-t border-l border-border sm:grid-cols-2">
             {[
-              "Professional headshots (color) — available on request",
-              "Short, medium, and long author bios — available on request",
-              "Fact sheet & key statistics — available on request",
-              "Book cover art (all five titles) — available on request",
+              "Professional headshots (color): available on request",
+              "Short, medium, and long author bios: available on request",
+              "Fact sheet & key statistics: available on request",
+              "Book cover art (all five titles): available on request",
             ].map((item) => (
               <div
                 key={item}

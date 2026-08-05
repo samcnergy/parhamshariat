@@ -17,7 +17,7 @@ export default function EventsPage() {
       <Reveal as="section" className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <h1 className="text-display-m sm:text-display-l">Events</h1>
         <div className="mt-6 border border-dashed border-border p-6 text-base text-grey-1">
-          [[PLACEHOLDER — DO NOT PUBLISH]] No events scheduled yet. Content
+          [[PLACEHOLDER: DO NOT PUBLISH]] No events scheduled yet. Content
           pending from Parham.
         </div>
         <Link

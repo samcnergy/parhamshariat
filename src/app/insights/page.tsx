@@ -33,7 +33,7 @@ export default function InsightsPage() {
           <h1 className="text-display-m sm:text-display-l">Insights</h1>
           <p className="mt-4 max-w-2xl text-base text-foreground/80">
             Writing on business strategy, AI search, and building digital
-            assets that last — originally published on LinkedIn and Medium.
+            assets that last, originally published on LinkedIn and Medium.
           </p>
         </div>
       </Reveal>

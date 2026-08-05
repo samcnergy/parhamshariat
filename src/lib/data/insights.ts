@@ -11,7 +11,7 @@ export const insights: Insight[] = [
     title: "You Don't Have a Content Problem. You Have a Real Estate Problem.",
     date: "June 2026",
     summary:
-      "Why online presence should be treated as lasting digital property, not disposable social media posts — and what that means for how businesses build their footprint.",
+      "Why online presence should be treated as lasting digital property, not disposable social media posts, and what that means for how businesses build their footprint.",
     url: "https://www.linkedin.com/pulse/you-dont-have-content-problem-real-estate-parham-shariat-hidrc/",
     source: "LinkedIn",
   },
@@ -19,7 +19,7 @@ export const insights: Insight[] = [
     title: "Beyond Keywords: Why Intent Optimization Is The Future of AI Search",
     date: "December 2025",
     summary:
-      "AI search is moving from keyword-matching to understanding what people actually want — and why businesses need to optimize for intent, not search terms.",
+      "AI search is moving from keyword-matching to understanding what people actually want, and why businesses need to optimize for intent, not search terms.",
     url: "https://www.linkedin.com/pulse/beyond-keywords-why-intent-optimization-future-ai-search-shariat-scboc/",
     source: "LinkedIn",
   },
@@ -27,7 +27,7 @@ export const insights: Insight[] = [
     title: "The Browser Revolution: How AI-Powered Answer Engines Are Transforming Business Productivity",
     date: "December 2025",
     summary:
-      "AI built directly into the browser is accelerating business decision-making — but only with the right governance in place to keep it a productivity gain, not a shortcut to complacency.",
+      "AI built directly into the browser is accelerating business decision-making, but only with the right governance in place to keep it a productivity gain, not a shortcut to complacency.",
     url: "https://www.linkedin.com/pulse/browser-revolution-how-ai-powered-answer-engines-business-shariat-m1fmc/",
     source: "LinkedIn",
   },
@@ -35,7 +35,7 @@ export const insights: Insight[] = [
     title: "Did ChatGPT Just Make Fun of Me?",
     date: "November 2025",
     summary:
-      "A small, funny moment with a voice-to-text typo becomes a jumping-off point for how relational AI has become — and what that means for using it strategically, not just as a search box.",
+      "A small, funny moment with a voice-to-text typo becomes a jumping-off point for how relational AI has become, and what that means for using it strategically, not just as a search box.",
     url: "https://www.linkedin.com/pulse/did-chatgpt-just-make-fun-me-parham-shariat-03cgc/",
     source: "LinkedIn",
   },
@@ -43,7 +43,7 @@ export const insights: Insight[] = [
     title: "Search Result Revolution You Can't Ignore",
     date: "November 2025",
     summary:
-      "Answer Engine Optimization is becoming essential for showing up in ChatGPT, Perplexity, and other AI platforms — traditional SEO alone no longer gets the job done.",
+      "Answer Engine Optimization is becoming essential for showing up in ChatGPT, Perplexity, and other AI platforms. Traditional SEO alone no longer gets the job done.",
     url: "https://www.linkedin.com/pulse/search-result-revolution-you-cant-ignore-parham-shariat-owfpc/",
     source: "LinkedIn",
   },
@@ -67,7 +67,7 @@ export const insights: Insight[] = [
     title: "Mismanagement of Human Resources Costs Money",
     date: "April 2024",
     summary:
-      "Companies waste money and stifle innovation when highly-paid employees are stuck doing work better suited for other roles — and what better talent management looks like instead.",
+      "Companies waste money and stifle innovation when highly-paid employees are stuck doing work better suited for other roles, and what better talent management looks like instead.",
     url: "https://www.linkedin.com/pulse/mismanagement-human-resources-costs-money-parham-shariat-ypz4c/",
     source: "LinkedIn",
   },
@@ -83,7 +83,7 @@ export const insights: Insight[] = [
     title: "Asking the Right Questions",
     date: "January 2024",
     summary:
-      "Asking good questions is a learnable business skill — and asking the wrong ones is like navigating with the wrong map.",
+      "Asking good questions is a learnable business skill, and asking the wrong ones is like navigating with the wrong map.",
     url: "https://medium.com/@parham_2333/asking-the-right-questions-42609d4b366f",
     source: "Medium",
   },
@@ -107,7 +107,7 @@ export const insights: Insight[] = [
     title: "The New Age of Data Management",
     date: "January 2020",
     summary:
-      "As AI and cloud computing reshape healthcare, security, and finance, data itself becomes an enterprise's most critical asset — and management practices have to catch up.",
+      "As AI and cloud computing reshape healthcare, security, and finance, data itself becomes an enterprise's most critical asset, and management practices have to catch up.",
     url: "https://www.linkedin.com/pulse/new-age-data-management-parham-shariat/",
     source: "LinkedIn",
   },

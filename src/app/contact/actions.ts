@@ -48,7 +48,7 @@ export async function submitContactForm(
 
     return {
       status: "success",
-      message: "Thanks — your message has been sent. Parham will be in touch soon.",
+      message: "Thanks! Your message has been sent. Parham will be in touch soon.",
     };
   } catch (err) {
     console.error("Contact form submission error:", err);
