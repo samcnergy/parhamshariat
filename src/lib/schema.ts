@@ -34,7 +34,37 @@ export function organizationSchema() {
     founder: {
       "@id": `${siteUrl}/#person`,
     },
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "California",
+      addressCountry: "US",
+    },
   };
+}
+
+export function serviceSchemas() {
+  const services = [
+    {
+      name: "Business Strategy Consulting",
+      description:
+        "Strategic identity, innovation culture, and long-term architecture for startups and growth-stage businesses, as outlined in The Business Strategy Plan.",
+    },
+    {
+      name: "Generative Engine Optimization (GEO)",
+      description:
+        "Structuring a business's digital presence and content so AI platforms like ChatGPT, Claude, and Perplexity can find, trust, and recommend it, based on the GEO framework in The Complete Guide to Dominating AI Search.",
+    },
+  ];
+  return services.map((service) => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: service.name,
+    description: service.description,
+    provider: {
+      "@id": `${siteUrl}/#organization`,
+    },
+    areaServed: "Worldwide",
+  }));
 }
 
 export function breadcrumbSchema(items: { name: string; path: string }[]) {

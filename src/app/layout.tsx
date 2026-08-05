@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
 import JsonLd from "@/components/JsonLd";
 import PageLoadWipe from "@/components/PageLoadWipe";
-import { personSchema, organizationSchema } from "@/lib/schema";
+import { personSchema, organizationSchema, serviceSchemas } from "@/lib/schema";
 import { siteConfig, siteUrl } from "@/lib/data/site";
 
 export const metadata: Metadata = {
@@ -47,6 +47,9 @@ export default function RootLayout({
         </noscript>
         <JsonLd data={personSchema()} />
         <JsonLd data={organizationSchema()} />
+        {serviceSchemas().map((service) => (
+          <JsonLd key={service.serviceType} data={service} />
+        ))}
         <PageLoadWipe />
         <SkipLink />
         <Header />

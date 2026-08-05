@@ -4,7 +4,10 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/data/site";
 import { books, getBookBySlug } from "@/lib/data/books";
 import { pressFeatures } from "@/lib/data/media";
+import { homeFaq } from "@/lib/data/faq";
+import { faqPageSchema } from "@/lib/schema";
 import HeroCarousel from "@/components/HeroCarousel";
+import JsonLd from "@/components/JsonLd";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import StaggerReveal from "@/components/StaggerReveal";
@@ -35,6 +38,8 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={faqPageSchema(homeFaq)} />
+
       {/* Hero — full-bleed photo carousel, nav floats transparent over it */}
       <section className="relative flex h-screen min-h-[36rem] items-end overflow-hidden bg-black text-white">
         <HeroCarousel slides={heroSlides} />
@@ -196,6 +201,29 @@ export default function HomePage() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ teaser — atomic Q&A blocks for AI/search citability */}
+      <section className="border-t border-grey-4">
+        <div className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
+          <p className="eyebrow text-grey-1">Frequently Asked Questions</p>
+          <div className="mt-8 space-y-10">
+            {homeFaq.map((faq) => (
+              <div key={faq.question}>
+                <h2 className="text-display-xxs">{faq.question}</h2>
+                <p className="mt-3 text-base leading-relaxed text-foreground/80">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+          <Link
+            href="/faq"
+            className="mt-10 inline-block border-b border-black pb-1 text-sm transition-opacity hover:opacity-60"
+          >
+            See All FAQs
+          </Link>
         </div>
       </section>
 

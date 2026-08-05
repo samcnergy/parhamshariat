@@ -45,6 +45,7 @@ export const footerNav = [
   { label: "Events", href: "/events" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Insights", href: "/insights" },
+  { label: "FAQ", href: "/faq" },
   { label: "Get Involved", href: "/social-responsibility" },
   { label: "Media", href: "/media" },
   { label: "Contact", href: "/contact" },

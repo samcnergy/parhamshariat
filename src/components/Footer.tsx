@@ -67,6 +67,13 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
             reserved.
           </p>
+          <p>
+            Last updated:{" "}
+            {new Date().toLocaleDateString("en-US", {
+              month: "long",
+              year: "numeric",
+            })}
+          </p>
           <Link href="/privacy" className="hover:text-white">
             Privacy Policy
           </Link>
