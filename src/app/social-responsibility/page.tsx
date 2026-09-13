@@ -66,6 +66,51 @@ export default function SocialResponsibilityPage() {
             </div>
           </div>
         </Reveal>
+
+        <Reveal className="mt-20 grid items-center gap-14 border-t border-border pt-16 md:grid-cols-2">
+          <div className="order-2 text-base leading-relaxed text-foreground/80 md:order-1">
+            <p className="eyebrow text-grey-1">Board Advisor</p>
+            <p className="mt-4">
+              I have joined Creshendo.org as an advisor to the Board,
+              because I believe in their cause and find their mission
+              important for humanity. As more and more people are
+              displaced by force, if we as a community don&apos;t help
+              these people get settled and adjusted, the world will become
+              a more dangerous place.
+            </p>
+            <p className="mt-4">
+              Creshendo develops community-led programs that help migrants
+              navigate new systems, build local connections, and take on
+              leadership roles within their communities. We believe
+              integration is more than accessing services. It is having
+              the relationships, knowledge, and opportunities needed to
+              participate fully in community life.
+            </p>
+            <a
+              href="https://creshendo.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-1.5 border-b border-black pb-1 text-sm transition-opacity hover:opacity-60"
+            >
+              Learn more about Creshendo
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <a
+            href="https://creshendo.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="order-1 mx-auto block w-full max-w-sm shadow-xl transition-opacity hover:opacity-90 md:order-2"
+          >
+            <Image
+              src="/images/creshendo-logo.png"
+              alt="Creshendo logo"
+              width={366}
+              height={286}
+              className="w-full object-contain"
+            />
+          </a>
+        </Reveal>
       </section>
     </>
   );

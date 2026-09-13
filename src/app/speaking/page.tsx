@@ -25,10 +25,6 @@ export default function SpeakingPage() {
           books: business strategy, building companies across three
           continents, and how AI is reshaping how businesses get found.
         </p>
-        <div className="mt-6 border border-dashed border-border p-6 text-base text-grey-1">
-          [[PLACEHOLDER: DO NOT PUBLISH]] Past engagements and specific
-          topic lists pending from Parham.
-        </div>
         <Link
           href="/contact"
           className="eyebrow mt-8 inline-block bg-foreground px-7 py-3.5 text-background transition-opacity hover:opacity-85"
