@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Speaking, Podcasts & Interviews",
   description:
-    "Parham Shariat is open to collaborating on speaking engagements, podcast appearances, and interviews about business strategy, AI search, and entrepreneurship.",
+    "Parham Shariat is open to collaborating on speaking engagements, podcast appearances, and interviews about business strategy and AI search.",
   alternates: { canonical: "/speaking" },
 };
 

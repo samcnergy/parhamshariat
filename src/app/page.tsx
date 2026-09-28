@@ -97,16 +97,20 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <p className="eyebrow text-white/50">The Business Strategy Series</p>
           <div className="mt-8 grid items-center gap-12 md:grid-cols-[1fr_1.1fr]">
-            <Image
-              src={featuredBook.coverImage.src}
-              alt={`Book cover for ${featuredBook.title}: ${featuredBook.subtitle}`}
-              width={featuredBook.coverImage.width}
-              height={featuredBook.coverImage.height}
-              className="h-[26rem] w-auto object-contain shadow-2xl"
-            />
+            <Link href={`/books/${featuredBook.slug}`}>
+              <Image
+                src={featuredBook.coverImage.src}
+                alt={`Book cover for ${featuredBook.title}: ${featuredBook.subtitle}`}
+                width={featuredBook.coverImage.width}
+                height={featuredBook.coverImage.height}
+                className="h-[26rem] w-auto object-contain shadow-2xl transition-opacity hover:opacity-85"
+              />
+            </Link>
             <div>
               <h2 className="font-display text-display-m uppercase leading-[0.85] sm:text-display-l">
-                {featuredBook.title}
+                <Link href={`/books/${featuredBook.slug}`} className="hover:opacity-70">
+                  {featuredBook.title}
+                </Link>
               </h2>
               <p className="mt-4 text-white/60">{featuredBook.subtitle}</p>
               <a

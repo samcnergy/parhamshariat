@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 import { siteConfig } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "Contact Parham Shariat",
+  title: "Contact",
   description:
     "Contact Parham Shariat for media inquiries, speaking engagements, consulting, or general questions.",
   alternates: { canonical: "/contact" },

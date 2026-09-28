@@ -1,6 +1,6 @@
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://parhamshariat.com";
+  "https://www.parhamshariat.com";
 
 export const siteConfig = {
   name: "Parham Shariat",
@@ -12,6 +12,7 @@ export const siteConfig = {
   contactEmail: "parhamshariat@gmail.com",
   phone: "+1-619-626-7545",
   phoneDisplay: "+1 619 626 7545",
+  wikidata: "https://www.wikidata.org/wiki/Q141446401",
   social: {
     linkedin: "https://www.linkedin.com/in/parhamshariat",
     instagram: "https://www.instagram.com/parhamshariat/",

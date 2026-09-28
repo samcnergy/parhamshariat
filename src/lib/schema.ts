@@ -1,6 +1,6 @@
 import { siteConfig, siteUrl } from "./data/site";
 import type { Book, BookFaq } from "./data/books";
-import { seriesName } from "./data/books";
+import { books, seriesName } from "./data/books";
 
 export function personSchema() {
   return {
@@ -20,7 +20,11 @@ export function personSchema() {
       siteConfig.social.amazonAuthor,
       siteConfig.social.substack,
       siteConfig.external.powerfulBlueprints,
+      siteConfig.wikidata,
     ].filter(Boolean),
+    workExample: books.map((book) => ({
+      "@id": `${siteUrl}/books/${book.slug}#book`,
+    })),
   };
 }
 
@@ -99,7 +103,8 @@ export function bookSchema(book: Book) {
   return {
     "@context": "https://schema.org",
     "@type": "Book",
-    name: book.title,
+    "@id": `${siteUrl}/books/${book.slug}#book`,
+    name: book.bibliographic.fullTitle,
     alternateName: book.subtitle,
     url: `${siteUrl}/books/${book.slug}`,
     image: `${siteUrl}${book.coverImage.src}`,
@@ -117,5 +122,15 @@ export function bookSchema(book: Book) {
       url: book.buyUrl,
       availability: "https://schema.org/InStock",
     },
+    isbn: book.bibliographic.isbn,
+    datePublished: book.bibliographic.datePublished,
+    numberOfPages: book.bibliographic.numberOfPages,
+    bookFormat: "https://schema.org/Paperback",
+    inLanguage: "en",
+    publisher: {
+      "@type": "Organization",
+      name: "Independently published",
+    },
+    sameAs: [book.bibliographic.amazonUrl, book.bibliographic.wikidataUrl],
   };
 }

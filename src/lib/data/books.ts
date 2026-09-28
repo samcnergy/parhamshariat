@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export type BookFaq = {
   question: string;
   answer: string;
@@ -7,6 +9,22 @@ export type BookFaq = {
 export type BookTestimonial = {
   quote: string;
   attribution: string;
+};
+
+/**
+ * Bibliographic data for Book JSON-LD, sourced from each book's Amazon
+ * listing and matching its Wikidata record. `fullTitle` is the canonical
+ * title as listed on Amazon/Wikidata (used for schema `name` and the page
+ * <title>), which can differ slightly from the on-page `title` + `subtitle`
+ * used in the site's own copy.
+ */
+export type BookBibliographicData = {
+  fullTitle: string;
+  isbn: string;
+  datePublished: string;
+  numberOfPages: number;
+  amazonUrl: string;
+  wikidataUrl: string;
 };
 
 export type Book = {
@@ -26,11 +44,14 @@ export type Book = {
   accentColor: string;
   isPlaceholder: boolean;
   shortDescription: string;
+  /** Trimmed to <=155 characters for <meta name="description">, cut from shortDescription; falls back to shortDescription when absent. Kept separate so the full shortDescription can still render as on-page hero copy. */
+  metaDescription?: string;
   mediumDescription: string;
   whoItsFor: string;
   keyTakeaways: string[];
   faq: BookFaq[];
   testimonial?: BookTestimonial;
+  bibliographic: BookBibliographicData;
 };
 
 export const seriesName = "The Business Strategy Series";
@@ -52,6 +73,8 @@ export const books: Book[] = [
     isPlaceholder: false,
     shortDescription:
       "Before you write a business plan, you need a strategy. This foundational guide provides the frameworks for designing businesses deliberately: defining strategic identity, building innovation cultures, planning for crises, and architecting for long-term value creation in an AI-driven economy. Strategy before tactics. Always.",
+    metaDescription:
+      "Before you write a business plan, you need a strategy. This foundational guide provides the frameworks for designing businesses deliberately.",
     mediumDescription:
       "Most founders write a business plan before they've answered a single strategic question, and pay for it later. A rushed positioning, a name that doesn't hold up, a structure that can't survive its first real pivot. Multiply that by the hours spent rebuilding and the money spent finding out the hard way, and it's not a rounding error. It's hundreds of hours and hundreds of thousands of dollars. And it's avoidable.\n\nThe Business Strategy Plan is the step before the business plan. It gives you the methodology to define your strategic identity through a clear, defensible brand statement, before you name the company, before you write the deck, before you spend a dollar on execution. Learn how to choose names, narratives, and structures that AI systems can recognize and recommend, how to build a culture that adapts to disruption instead of getting blindsided by it, and how to plan for crises and competitive shifts before they happen instead of after.\n\nThis is not a book about tactics. It's about the thinking layer that determines whether your tactics ever get a chance to work. Read it before you write your business plan, not after you've already spent the money finding out what's missing from it. It's the first book in The Business Strategy Series, distilled from two decades of Parham Shariat's work building and advising companies across three continents.",
     whoItsFor:
@@ -90,6 +113,14 @@ export const books: Book[] = [
           "Founders, executives, and operators who want to design their business deliberately, defining strategic identity, innovation culture, and long-term architecture before moving into tactical execution or writing a formal business plan.",
       },
     ],
+    bibliographic: {
+      fullTitle: "The Business Strategy Plan: In the Age of AI",
+      isbn: "9798241212313",
+      datePublished: "2025-12-24",
+      numberOfPages: 182,
+      amazonUrl: "https://www.amazon.com/dp/B0GD7161R3",
+      wikidataUrl: "https://www.wikidata.org/wiki/Q141446479",
+    },
   },
   {
     slug: "digital-real-estate",
@@ -107,6 +138,8 @@ export const books: Book[] = [
     isPlaceholder: false,
     shortDescription:
       "If people had to pay to see your posts, would they? Digital Real Estate shows you how to stop filling someone else's platform and start building digital assets: online property that appreciates instead of disappearing by morning.",
+    metaDescription:
+      "If people had to pay to see your posts, would they? Digital Real Estate shows you how to stop filling someone else's platform.",
     mediumDescription:
       "Ask yourself one question and answer it honestly. If people had to pay to see your posts on social media, would they pay?\n\nIf the answer is no, your digital assets are worthless. You are not building a digital real estate portfolio. You are filling someone else's platform with work that disappears by morning.\n\nMost people never have a strategy for building a digital footprint worth owning. They pour hours into posting stuff that has no value beyond three seconds. It gets a glance, maybe a like, and then it's gone. Years of effort, nothing to show for it.\n\nWhen you want to build a house, you first hire an architect. Once the vision is on paper, a contractor builds it. Digital Real Estate works the same way. You have to design what you're trying to build, then execute it, and do it consistently.\n\nAlmost nobody teaches this. Endless advice on going viral, almost none on owning ground. This book is the missing piece.",
     whoItsFor:
@@ -139,6 +172,14 @@ export const books: Book[] = [
       attribution:
         "Sophia Hartwell, Book Marketing Specialist, BookFrame Collective Agency",
     },
+    bibliographic: {
+      fullTitle: "Digital Real Estate: How to Own More Space on the Internet",
+      isbn: "9798197237309",
+      datePublished: "2026-05-16",
+      numberOfPages: 49,
+      amazonUrl: "https://www.amazon.com/dp/B0H23DZG1Q",
+      wikidataUrl: "https://www.wikidata.org/wiki/Q141594676",
+    },
   },
   {
     slug: "dominating-ai-search",
@@ -156,6 +197,8 @@ export const books: Book[] = [
     isPlaceholder: false,
     shortDescription:
       "Your prospects aren't Googling anymore. They're asking AI. This field-tested framework shows exactly how to get your business recommended by ChatGPT, Claude, Perplexity, and other AI platforms. Based on 11 months of research that increased citation visibility from 4% to 43% in 90 days.",
+    metaDescription:
+      "Your prospects aren't Googling anymore. They're asking AI. This field-tested framework shows exactly how to get your business recommended by AI platforms.",
     mediumDescription:
       "When was the last time your company was recommended by an AI platform? If the answer is \"never,\" the cost is not hypothetical. It is lost revenue, missed opportunities, and declining market relevance.\n\nMore than 60% of professionals now use AI systems for work-related research. Yet most businesses appear in fewer than 10% of AI-generated answers, even when they rank well on Google. Why? Because traditional SEO was never designed for AI search. AI systems don't rank websites. They cite sources inside generated answers. There is no page two. You're either referenced or invisible.\n\nAfter analyzing 50+ businesses over eleven months, this book presents the complete Generative Engine Optimization framework: foundation architecture, the Atomic Answer Block content system, a 90-day execution plan, authority signals, distribution strategy, and measurement protocols.\n\nIt's the third book in The Business Strategy Series: the execution playbook that follows two decades of strategic groundwork, not a standalone trend.",
     whoItsFor:
@@ -194,6 +237,14 @@ export const books: Book[] = [
           "It's the third book in The Business Strategy Series, and the execution playbook: The Business Strategy Plan establishes strategic identity, Digital Real Estate identifies the shift toward owning your digital footprint, and this book supplies the step-by-step system for getting cited by AI once that foundation is in place.",
       },
     ],
+    bibliographic: {
+      fullTitle: "The Complete Guide to Dominating AI Search",
+      isbn: "9798278638926",
+      datePublished: "2025-12-13",
+      numberOfPages: 174,
+      amazonUrl: "https://www.amazon.com/dp/B0G76LKX61",
+      wikidataUrl: "https://www.wikidata.org/wiki/Q141446452",
+    },
   },
   {
     slug: "six-ways-to-make-a-seven",
@@ -211,6 +262,8 @@ export const books: Book[] = [
     isPlaceholder: false,
     shortDescription:
       "Most people bet on excitement and hope for the best. This book is about the four forces that actually decide outcomes, at the craps table and in business: timing, strategy, pattern recognition, and consistency, drawn from two decades of Parham Shariat's career across three continents.",
+    metaDescription:
+      "Most people bet on excitement and hope for the best. This book is about the four forces that decide outcomes: timing, strategy, and pattern recognition.",
     mediumDescription:
       "Most people walk up to a craps table the same way they walk into a business decision: excited, reactive, and following whoever looks like they know what they are doing. They bet on the excitement. They press when everyone else is pressing. And when the seven comes, as it always does, they are not prepared for it.\n\nThis book is about the four forces that determine every outcome at the craps table and every significant decision in business: timing, strategy, pattern recognition, and consistency. Not as a framework. As a way of thinking that takes years to develop and a lifetime to master.\n\nParham Shariat spent over two decades navigating markets across three continents, from commercial real estate in Washington DC to institutional-scale deals in Dubai, and from the dot-com era to the rise of artificial intelligence. He has watched markets boom and collapse, made pivots that paid off and ones he still thinks about, and learned most of his hardest lessons not in a boardroom but standing at the edge of a craps table, watching before he bought in.\n\nThis is not a gambling book. It is not a how-to guide. It is the honest account of a career built on reading cycles, positioning early, pressing when the math justified it, and protecting capital when everyone around him was deploying theirs.\n\nFor the young entrepreneur figuring out how business actually works (not the version they teach in school, but the real version), this book is the conversation most people never get to have with someone who has actually been through it.\n\nThe dice rolls are cyclical. The patterns repeat. And if you learn to read them, you will make better decisions than most of the people around you.\n\nNot perfect decisions. Better ones.\n\nFor readers who want to improve their craps game, four strategy lessons are included at the back of the book.",
     whoItsFor:
@@ -237,6 +290,14 @@ export const books: Book[] = [
         answer: "Six Ways to Make a 7 is available on Amazon.",
       },
     ],
+    bibliographic: {
+      fullTitle: "Six Ways to Make a 7: Knowing When to Walk Away",
+      isbn: "9798257739835",
+      datePublished: "2026-04-17",
+      numberOfPages: 52,
+      amazonUrl: "https://www.amazon.com/dp/B0GXPB8VLB",
+      wikidataUrl: "https://www.wikidata.org/wiki/Q141594686",
+    },
   },
   {
     slug: "rockefeller-letters",
@@ -254,6 +315,8 @@ export const books: Book[] = [
     isPlaceholder: false,
     shortDescription:
       "Thirty-eight letters. Timeless lessons. The private counsel John D. Rockefeller gave his son on discipline, judgment, responsibility, and the long view required to build something that lasts. Not advice meant to comfort, but wisdom meant to forge resilience in the next generation of leaders.",
+    metaDescription:
+      "Thirty-eight letters. Timeless lessons. The private counsel John D. Rockefeller gave his son on discipline, judgment, and responsibility.",
     mediumDescription:
       "What makes these letters enduring is not their origin in the Gilded Age, but their focus on questions that confront every serious leader: How do you think clearly under pressure? How do you build something that lasts? How do you prepare the next generation not merely to inherit, but to lead?\n\nRockefeller's counsel is strategic, psychological, and unforgiving in its honesty. Each letter addresses discipline, judgment, responsibility, and the long view required to steward organizations, capital, and influence across decades.\n\nThis is a companion volume within The Business Strategy Series: the leadership and philosophical reading that complements the strategic and tactical frameworks in the other three books, presented with Parham Shariat's own reflections connecting Rockefeller's counsel to modern business leadership.\n\nFor entrepreneurs, executives, and long-term thinkers who seek not only to build organizations, but to lead them with clarity, discipline, and purpose.",
     whoItsFor:
@@ -292,6 +355,14 @@ export const books: Book[] = [
           "Entrepreneurs, executives, and long-term thinkers who want to lead the organizations they build with clarity, discipline, and purpose, not just build them.",
       },
     ],
+    bibliographic: {
+      fullTitle: "38 Letters of Rockefeller to His Son: With Author's Reflection",
+      isbn: "9798242715660",
+      datePublished: "2026-01-06",
+      numberOfPages: 167,
+      amazonUrl: "https://www.amazon.com/dp/B0GFCZ8KT7",
+      wikidataUrl: "https://www.wikidata.org/wiki/Q141594690",
+    },
   },
 ];
 
@@ -304,7 +375,33 @@ export function getMetaDescription(book: Book): string {
   if (book.isPlaceholder) {
     return `${book.title}: ${book.subtitle}, a book by Parham Shariat, author and Founder & Chief Strategy Officer of ReTHINK CNERGY.`;
   }
-  return book.shortDescription;
+  return book.metaDescription ?? book.shortDescription;
+}
+
+/**
+ * Full <head> metadata for a book detail page: title (from the canonical
+ * Amazon/Wikidata title, not the on-page title + subtitle), description,
+ * canonical URL, and og:image/twitter:image set to the book's own cover.
+ */
+export function getBookMetadata(book: Book): Metadata {
+  return {
+    title: book.bibliographic.fullTitle,
+    description: getMetaDescription(book),
+    alternates: { canonical: `/books/${book.slug}` },
+    openGraph: {
+      images: [
+        {
+          url: book.coverImage.src,
+          width: book.coverImage.width,
+          height: book.coverImage.height,
+          alt: `Book cover for ${book.title}: ${book.subtitle}`,
+        },
+      ],
+    },
+    twitter: {
+      images: [book.coverImage.src],
+    },
+  };
 }
 
 /** The three-book core journey, in narrative order: strategy → footprint → execution. */

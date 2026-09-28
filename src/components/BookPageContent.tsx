@@ -86,14 +86,6 @@ export default function BookPageContent({ book }: { book: Book }) {
           </>
         )}
 
-        {book.isPlaceholder && (
-          <section className="border border-dashed border-border p-6 text-sm text-grey-1">
-            {book.whoItsFor.includes("PLACEHOLDER")
-              ? "Full description and key takeaways for this title are pending final copy from Parham."
-              : book.whoItsFor}
-          </section>
-        )}
-
         {book.testimonial && (
           <Reveal as="section" className="mt-14 border border-border bg-muted p-6 sm:p-8">
             <h2 className="eyebrow text-grey-1">What People Are Saying</h2>

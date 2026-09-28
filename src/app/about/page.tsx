@@ -5,12 +5,12 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import StaggerReveal from "@/components/StaggerReveal";
-import { authorBios } from "@/lib/data/author";
 import { books } from "@/lib/data/books";
 
 export const metadata: Metadata = {
-  title: "About Parham Shariat",
-  description: authorBios.medium.split("\n\n")[0],
+  title: "About",
+  description:
+    "Parham Shariat is the author of The Business Strategy Series, a serial entrepreneur whose career spans over two decades of building and advising companies.",
   alternates: { canonical: "/about" },
 };
 

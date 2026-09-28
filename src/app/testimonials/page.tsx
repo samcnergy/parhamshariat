@@ -31,11 +31,6 @@ export default function TestimonialsPage() {
             </div>
           ))}
         </StaggerReveal>
-
-        <Reveal className="mt-10 border border-dashed border-border p-6 text-base text-grey-1">
-          [[PLACEHOLDER: DO NOT PUBLISH]] Client testimonials pending from
-          Parham.
-        </Reveal>
       </section>
     </>
   );

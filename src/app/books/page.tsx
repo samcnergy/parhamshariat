@@ -9,9 +9,9 @@ import { faqPageSchema } from "@/lib/schema";
 import { journeyBooks, furtherReadingBooks, seriesName, seriesFaq } from "@/lib/data/books";
 
 export const metadata: Metadata = {
-  title: "Books by Parham Shariat",
+  title: "Books",
   description:
-    "Field notes from 25+ years building companies: The Business Strategy Plan, Digital Real Estate, The Complete Guide to Dominating AI Search, Six Ways to Make a 7, and The 38 Letters of Rockefeller to His Son.",
+    "Field notes from 25+ years building companies: The Business Strategy Plan, Digital Real Estate, and The Complete Guide to Dominating AI Search.",
   alternates: { canonical: "/books" },
 };
 
