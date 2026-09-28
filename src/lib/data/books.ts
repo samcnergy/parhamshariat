@@ -195,13 +195,19 @@ export const books: Book[] = [
       height: 3300,
     },
     accentColor: "#1A1A1A",
-    isPlaceholder: true,
-    shortDescription: "[[PLACEHOLDER: DO NOT PUBLISH]]",
-    mediumDescription: "[[PLACEHOLDER: DO NOT PUBLISH]]",
-    // Confirmed positioning from Parham (not invented): written for a distinct, younger entrepreneurial audience.
+    isPlaceholder: false,
+    shortDescription:
+      "Most people bet on excitement and hope for the best. This book is about the four forces that actually decide outcomes, at the craps table and in business: timing, strategy, pattern recognition, and consistency, drawn from two decades of Parham Shariat's career across three continents.",
+    mediumDescription:
+      "Most people walk up to a craps table the same way they walk into a business decision: excited, reactive, and following whoever looks like they know what they are doing. They bet on the excitement. They press when everyone else is pressing. And when the seven comes, as it always does, they are not prepared for it.\n\nThis book is about the four forces that determine every outcome at the craps table and every significant decision in business: timing, strategy, pattern recognition, and consistency. Not as a framework. As a way of thinking that takes years to develop and a lifetime to master.\n\nParham Shariat spent over two decades navigating markets across three continents, from commercial real estate in Washington DC to institutional-scale deals in Dubai, and from the dot-com era to the rise of artificial intelligence. He has watched markets boom and collapse, made pivots that paid off and ones he still thinks about, and learned most of his hardest lessons not in a boardroom but standing at the edge of a craps table, watching before he bought in.\n\nThis is not a gambling book. It is not a how-to guide. It is the honest account of a career built on reading cycles, positioning early, pressing when the math justified it, and protecting capital when everyone around him was deploying theirs.\n\nFor the young entrepreneur figuring out how business actually works (not the version they teach in school, but the real version), this book is the conversation most people never get to have with someone who has actually been through it.\n\nThe dice rolls are cyclical. The patterns repeat. And if you learn to read them, you will make better decisions than most of the people around you.\n\nNot perfect decisions. Better ones.\n\nFor readers who want to improve their craps game, four strategy lessons are included at the back of the book.",
     whoItsFor:
-      "Written for a distinct, younger entrepreneurial audience. [[Remaining description PLACEHOLDER: DO NOT PUBLISH]]",
-    keyTakeaways: [],
+      "For the young entrepreneur figuring out how business actually works, not the version they teach in school, but the real version. This book is the conversation most people never get to have with someone who has actually been through it.",
+    keyTakeaways: [
+      "Every outcome, at the craps table or in business, comes down to four forces: timing, strategy, pattern recognition, and consistency.",
+      "Markets are cyclical like the dice. Learning to read the patterns leads to better decisions, not perfect ones.",
+      "Drawn from two decades navigating markets across three continents, from commercial real estate in Washington DC to institutional-scale deals in Dubai, through the dot-com era and the rise of AI.",
+      "Includes four practical craps strategy lessons at the back of the book for readers who want to improve their own game.",
+    ],
     faq: [
       {
         question: "Who wrote Six Ways to Make a 7?",
