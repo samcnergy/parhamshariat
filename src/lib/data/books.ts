@@ -184,7 +184,7 @@ export const books: Book[] = [
   },
   {
     slug: "six-ways-to-make-a-seven",
-    title: "Six Ways to Make a Seven",
+    title: "Six Ways to Make a 7",
     subtitle: "Knowing When to Walk Away",
     seriesPosition: 4,
     journeyRole: "For a Younger Audience",
@@ -204,25 +204,25 @@ export const books: Book[] = [
     keyTakeaways: [],
     faq: [
       {
-        question: "Who wrote Six Ways to Make a Seven?",
+        question: "Who wrote Six Ways to Make a 7?",
         answer:
-          "Six Ways to Make a Seven: Knowing When to Walk Away was written by Parham Shariat, author of The Business Strategy Series and Founder & Chief Strategy Officer of ReTHINK CNERGY.",
+          "Six Ways to Make a 7: Knowing When to Walk Away was written by Parham Shariat, author of The Business Strategy Series and Founder & Chief Strategy Officer of ReTHINK CNERGY.",
       },
       {
-        question: "Who is Six Ways to Make a Seven written for?",
+        question: "Who is Six Ways to Make a 7 written for?",
         answer:
-          "Six Ways to Make a Seven is written for a distinct, younger entrepreneurial audience, set apart from the core three-book strategy series.",
+          "Six Ways to Make a 7 is written for a distinct, younger entrepreneurial audience, set apart from the core three-book strategy series.",
       },
       {
-        question: "Where can I buy Six Ways to Make a Seven?",
-        answer: "Six Ways to Make a Seven is available on Amazon.",
+        question: "Where can I buy Six Ways to Make a 7?",
+        answer: "Six Ways to Make a 7 is available on Amazon.",
       },
     ],
   },
   {
     slug: "rockefeller-letters",
     title: "The 38 Letters of Rockefeller to His Son",
-    subtitle: "With Author's Reflections",
+    subtitle: "With Author's Reflection",
     seriesPosition: 5,
     journeyRole: "Companion Read",
     buyUrl: "https://a.co/d/06Ea10X4",
@@ -302,7 +302,7 @@ export const seriesFaq: BookFaq[] = [
   {
     question: "How do the books in The Business Strategy Series work together?",
     answer:
-      "They follow a journey: The Business Strategy Plan lays the strategic foundation, Digital Real Estate identifies the shift toward owning your digital footprint as AI reshaped discovery, and The Complete Guide to Dominating AI Search supplies the execution playbook for getting cited by AI. Six Ways to Make a Seven is written separately for a younger entrepreneurial audience, and The 38 Letters of Rockefeller to His Son is a companion volume on leadership and judgment.",
+      "They follow a journey: The Business Strategy Plan lays the strategic foundation, Digital Real Estate identifies the shift toward owning your digital footprint as AI reshaped discovery, and The Complete Guide to Dominating AI Search supplies the execution playbook for getting cited by AI. Six Ways to Make a 7 is written separately for a younger entrepreneurial audience, and The 38 Letters of Rockefeller to His Son is a companion volume on leadership and judgment.",
   },
   {
     question: "What do these books ask readers to do differently?",

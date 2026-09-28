@@ -11,7 +11,7 @@ import { journeyBooks, furtherReadingBooks, seriesName, seriesFaq } from "@/lib/
 export const metadata: Metadata = {
   title: "Books by Parham Shariat",
   description:
-    "Field notes from 25+ years building companies: The Business Strategy Plan, Digital Real Estate, The Complete Guide to Dominating AI Search, Six Ways to Make a Seven, and The 38 Letters of Rockefeller to His Son.",
+    "Field notes from 25+ years building companies: The Business Strategy Plan, Digital Real Estate, The Complete Guide to Dominating AI Search, Six Ways to Make a 7, and The 38 Letters of Rockefeller to His Son.",
   alternates: { canonical: "/books" },
 };
 

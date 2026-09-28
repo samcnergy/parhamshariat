@@ -19,7 +19,7 @@ export const siteFaq: BookFaq[] = [
   {
     question: "What books has Parham Shariat written?",
     answer:
-      "Parham Shariat is the author of The Business Strategy Series: The Business Strategy Plan, Digital Real Estate, The Complete Guide to Dominating AI Search, Six Ways to Make a Seven, and The 38 Letters of Rockefeller to His Son.",
+      "Parham Shariat is the author of The Business Strategy Series: The Business Strategy Plan, Digital Real Estate, The Complete Guide to Dominating AI Search, Six Ways to Make a 7, and The 38 Letters of Rockefeller to His Son.",
   },
   {
     question: "Is Parham Shariat available for speaking engagements or podcasts?",
