@@ -3,6 +3,12 @@ export type BookFaq = {
   answer: string;
 };
 
+/** An attributed quote about the book, not a verified reader review — no rating, no Review/AggregateRating schema. */
+export type BookTestimonial = {
+  quote: string;
+  attribution: string;
+};
+
 export type Book = {
   slug: string;
   title: string;
@@ -24,6 +30,7 @@ export type Book = {
   whoItsFor: string;
   keyTakeaways: string[];
   faq: BookFaq[];
+  testimonial?: BookTestimonial;
 };
 
 export const seriesName = "The Business Strategy Series";
@@ -126,6 +133,12 @@ export const books: Book[] = [
         answer: "Digital Real Estate is available on Amazon.",
       },
     ],
+    testimonial: {
+      quote:
+        "You understood that the symptoms are not the disease. The challenge is not the quality of the work. It is that the right readers cannot find it yet.",
+      attribution:
+        "Sophia Hartwell, Book Marketing Specialist, BookFrame Collective Agency",
+    },
   },
   {
     slug: "dominating-ai-search",

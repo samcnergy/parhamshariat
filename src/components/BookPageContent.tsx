@@ -94,6 +94,18 @@ export default function BookPageContent({ book }: { book: Book }) {
           </section>
         )}
 
+        {book.testimonial && (
+          <Reveal as="section" className="mt-14 border border-border bg-muted p-6 sm:p-8">
+            <h2 className="eyebrow text-grey-1">What People Are Saying</h2>
+            <blockquote className="mt-4 text-lg leading-relaxed text-foreground">
+              <p>{book.testimonial.quote}</p>
+              <cite className="mt-4 block text-sm not-italic text-foreground/70">
+                {book.testimonial.attribution}
+              </cite>
+            </blockquote>
+          </Reveal>
+        )}
+
         {book.faq.length > 0 && (
           <Reveal as="section" className="mt-14">
             <h2 className="text-display-xxs">Frequently Asked Questions</h2>
